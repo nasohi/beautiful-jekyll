@@ -1,0 +1,14 @@
+---
+layout: post
+title: Iptables Firewall Stateless vs Statefull on Router
+date: '2019-10-19T21:57:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- IPTables
+- Firewall
+modified_time: '2019-10-19T21:59:00.931+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3691763501498894184
+blogger_orig_url: https://nciptandani.blogspot.com/2019/10/iptables-firewall-stateless-vs.html
+---
+
+Iptables Firewall Stateless vs Statefull on Router<br />Task: Create the firewall rule for IP 1.1.1.1 can access ssh server on 2.2.2.2<br /><br />2 ways:<br /><br /><b>1. Stateless</b><br />#iptables -P FORWARD DROP<br />#iptables -A FORWARD -p tcp --dport 22 -s 1.1.1.1 -d 2.2.2.2 -j ACCEPT<br />#iptables -A FORWARD -p tcp --sport 22 -s 2.2.2.2 -d 1.1.1.1 -j ACCEPT<br /><br />or<br /><br /><b>2. Statefull (recommended)</b><br />#iptables -P FORWARD DROP<br />#iptables -A FORWARD -p tcp -m state --state ESTABLISHED,RELATED -j ACCEPT<br />#iptables -A FORWARD -p tcp --dport 22 -s 1.1.1.1 -d 2.2.2.2 -j ACCEPT

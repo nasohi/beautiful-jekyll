@@ -1,0 +1,14 @@
+---
+layout: post
+title: How to configur proftpd for webmaster
+date: '2019-09-14T00:47:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- ProFTPd
+- FTP
+modified_time: '2019-09-14T00:50:06.989+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8815792472572041169
+blogger_orig_url: https://nciptandani.blogspot.com/2019/09/how-to-configur-proftpd-for-webmaster.html
+---
+
+<b>OS:</b> Debian 10<br /><br />Install an FTP-server using proftpd<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#apt-get install proftpd</span><br /><br />Change the user and group owner of /var/www is www-data and add full permission to user and group.<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#chown -R www-data:www-data /var/www/</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#chmod -R 775 /var/www</span><br /><br />Add a user called "webmaster" with the password "$3curE" and the root directory is the same directory as the web-root /var/www<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#useradd -d /var/www -s /bin/false webmaster</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#passwd webmaster</span><br /><br />Add a webmaster user to the www-data group as primary group.<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#usermod -g www-data webmaster</span><br /><br />Configure proftpd.conf<br />- User must not leave its home directory.<br />- Disable shell access for webmaster.<br />- When uploading files, the group is set to www-data.<br /><br /><span style="font-family: Courier New, Courier, monospace;">DefaultRoot&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;~</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">RequireValidShell&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;off</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#service proftpd restart</span><br /><br /><br /><br /><br /><br />

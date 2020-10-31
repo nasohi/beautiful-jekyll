@@ -1,0 +1,14 @@
+---
+layout: post
+title: Version in “./docker-compose.yml” is unsupported. You might be seeing this
+  error because you're using the wrong Compose file version
+date: '2018-09-16T12:54:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Docker
+modified_time: '2018-09-16T12:54:15.585+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-26670077292330518
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/version-in-docker-composeyml-is.html
+---
+
+<b>Problem:</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">Version in “./docker-compose.yml” is unsupported. You might be seeing this error because you're using the wrong Compose file version</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;"><b>Solution:</b></span><br /><span style="font-family: inherit;"><b><br /></b></span><span style="font-family: inherit;">Upgrade docker-compose</span><br /><span style="font-family: inherit;"><b><br /></b></span>step1:<br /><br /><span style="font-family: Courier New, Courier, monospace;">$which docker-compose</span><br /><span style="font-family: Courier New, Courier, monospace;">/usr/bin/docker-compose</span><br /><br />step2:<br /><br /><span style="font-family: Courier New, Courier, monospace;">$sudo rm /usr/bin/docker-compose</span><br /><br />step3:<br /><br /><span style="font-family: Courier New, Courier, monospace;">curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose</span><br /><br />step4:<br /><br /><span style="font-family: Courier New, Courier, monospace;">chmod +x /usr/bin/docker-compose</span>

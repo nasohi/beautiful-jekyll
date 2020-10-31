@@ -1,0 +1,14 @@
+---
+layout: post
+title: Tips iptables menghapus rule di line tertentu
+date: '2018-06-28T23:10:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- IPTables
+- Linux
+modified_time: '2018-06-28T23:13:22.658+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-870206028969874839
+blogger_orig_url: https://nciptandani.blogspot.com/2018/06/tips-iptables-menghapus-rule-di-line.html
+---
+
+Dengan ini tidak perlu menghapus semua rule yang sudah dibuat, cukup lihat baris keberapa dan hapus. Cara memeriksa ada rule iptables dengan option --line-numbers gunakan perintah berikut:<br /><br /><blockquote class="tr_bq"><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">iptables -L -n --line-numbers</span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">iptables -t nat -L -n --line-numbers</span></blockquote><br />Jika perlu menghapus salah satu rule iptables, perlu mengetahui 2 hal. Nama chain ditetapkan, dan nomor baris nya. Selanjutnya tinggal dilihat nomor rule yang ingin dihapus. Untuk menghapus jalankan perintah ini<br /><br /><blockquote class="tr_bq"><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">iptables -D INPUT 1</span></blockquote><br />Contoh diatas akan menghapus rule 1 dari chain INPUT.

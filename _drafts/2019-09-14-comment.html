@@ -1,0 +1,23 @@
+---
+layout: post
+title: 'To make sure any file or folder you create in /var/www/html gets automatically
+  owned by www-data you can use inotify, it''s like cron but monitors folders/files
+  for changes in attribuets, file creations, modifications and much more.  First install
+  it with:  $ sudo apt-get install incron Allow root to use incron by opening /etc/incron.allow
+  with:  $ sudo vim /etc/incron.allow and add root to the file, then save and exit.  Edit
+  your incrontab with:  $ sudo incrontab -u root -e and add the following line to
+  it:  /var/www/html IN_CREATE /bin/chown -R www-data:www-data /var/www/html/ save
+  and exit.  Now as soon as a file is created in the /var/www/html direcotry it will
+  automatically set onwership to www-data:www-data.  Explanation of the line in incrontab:  /var/www/html
+  is the directory that will be monitored.  IN_CREATE will watch for created files.
+  It''s the file change mask.  /bin/chown -R www-data:www-data /var/www/html/ is the
+  command/action to execute.'
+date: '2019-09-14T01:04:00.003+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2019-09-14T01:04:49.394+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5347233851803329616
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=5347233851803329616
+---
+
+To make sure any file or folder you create in /var/www/html gets automatically owned by www-data you can use inotify, it's like cron but monitors folders/files for changes in attribuets, file creations, modifications and much more.<br /><br />First install it with:<br /><br />$ sudo apt-get install incron<br />Allow root to use incron by opening /etc/incron.allow with:<br /><br />$ sudo vim /etc/incron.allow<br />and add root to the file, then save and exit.<br /><br />Edit your incrontab with:<br /><br />$ sudo incrontab -u root -e<br />and add the following line to it:<br /><br />/var/www/html IN_CREATE /bin/chown -R www-data:www-data /var/www/html/<br />save and exit.<br /><br />Now as soon as a file is created in the /var/www/html direcotry it will automatically set onwership to www-data:www-data.<br /><br />Explanation of the line in incrontab:<br /><br />/var/www/html is the directory that will be monitored.<br /><br />IN_CREATE will watch for created files. It's the file change mask.<br /><br />/bin/chown -R www-data:www-data /var/www/html/ is the command/action to execute.

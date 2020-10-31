@@ -1,0 +1,12 @@
+---
+layout: post
+title: Cara memasang ZSH di GNU/Linux (Debian)
+date: '2018-07-28T21:25:00.002+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-07-28T21:25:26.296+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-551456842103659735
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=551456842103659735
+---
+
+<span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;">1. apt-get update</span><br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;">2. apt-get install wget git zsh</span><br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;"><br /></span>Mengganti shell root ke /bin/zsh<br /><span style="background-color: black;"><span style="color: white; font-family: Courier New, Courier, monospace;">3. chsh -s /bin/zsh root&nbsp;</span></span><br /><span style="background-color: black;"><span style="color: white; font-family: Courier New, Courier, monospace;"><br /></span></span>Untuk user baru<br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;">4. useradd -d /home/nasohi -s /bin/zsh nasohi</span><br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;">5. passwd nasohi</span><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;"><br /></span><br /><br />Install Oh-My-Zsh framework<br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;">6. wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh</span><br /><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;"><br /></span><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;"><br /></span><span style="background-color: black; color: white; font-family: Courier New, Courier, monospace;"><br /></span><br />

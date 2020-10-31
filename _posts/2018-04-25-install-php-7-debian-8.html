@@ -1,0 +1,12 @@
+---
+layout: post
+title: Install PHP 7 Debian 8
+date: '2018-04-25T23:28:00.001+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-04-25T23:28:10.873+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-557062747758187448
+blogger_orig_url: https://nciptandani.blogspot.com/2018/04/install-php-7-debian-8.html
+---
+
+<div><span style="font-size: 14.44px;">Menambahkan Repositori ini ke sistem Anda</span></div><div><span style="font-size: 14.44px;">Anda dapat memperbarui sistem Anda dengan paket dari PPA ini dengan menambahkan ppa: ondrej / php ke Sumber Perangkat Lunak sistem Anda.</span></div><div><span style="font-size: 14.44px;"><br /></span></div><blockquote class="tr_bq"><span style="font-size: 14.44px;">apt-get install apt-transport-https lsb-release ca-certificates</span><span style="font-size: 14.44px;">wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg</span><span style="font-size: 14.44px;">echo "deb https://packages.sury.org/php/ $ (lsb_release -sc) main"&gt; /etc/apt/sources.list.d/php.list</span></blockquote><div><span style="font-size: 14.44px;"><br /></span></div><div><span style="font-size: 14.44px;">Memasang PHP</span></div><div><span style="font-size: 14.44px;">Sekarang karena kami memiliki PPA ondrej yang tersedia sebagai sumber, kita dapat melanjutkan dan menginstal PHP seperti biasa dengan apt-get, kita hanya perlu menentukan versi yang ingin kita gunakan.</span></div><div><span style="font-size: 14.44px;"><br /></span></div><blockquote class="tr_bq"><span style="font-size: 14.44px;">&nbsp;apt-get install php7.1</span></blockquote><div><span style="font-size: 14.44px;">Memasang Beberapa Paket Tambahan</span></div><blockquote class="tr_bq"><span style="font-size: 14.44px;">apt-get install php7.1-cli php7.1-common php7.1-curl php7.1-gd php7.1-json php7.1-mbstring php7.1-mysql php7.1-opcache php7.1-readline php7.1-xml</span></blockquote><div><span style="font-size: 14.44px;">Verifikasi Pasang</span></div><div><span style="font-size: 14.44px;">Untuk memverifikasi PHP7.1 diinstal, jalankan saja yang berikut untuk melihat versi yang Anda gunakan.</span></div><div><span style="font-size: 14.44px;"><br /></span></div><blockquote class="tr_bq"><span style="font-size: 14.44px;">php -v</span></blockquote>

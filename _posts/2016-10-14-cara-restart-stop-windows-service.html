@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara restart / stop windows service (services.msc) dengan bat / cmd
+date: '2016-10-14T22:57:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Windows
+modified_time: '2016-10-14T23:00:12.714+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1701944071167896059
+blogger_orig_url: https://nciptandani.blogspot.com/2016/10/cara-restart-stop-windows-service.html
+---
+
+Sebenarnya bisa disetting secara automatic sih di services.msc agar tiap boot langsung running, tapi dengan alasan saya tidak ingin banyak memakan resources cpu,memory jika saya tidak sedang bermain dengan SQL Server maka saya buat manual start, bikin shortcut untuk dijalanin manual biar gak pergi ke services.msc setiap saya ingin main. hehe.<br /><br />Bisa kita lihat windows service dengan run &gt; services.msc<br />cara lainnya yaitu cmd &nbsp;&gt; sc query<br /><br />Dibawah ini adalah contoh script bat untuk start service SQL<br /><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">@echo off</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">net start MSSQL$SQLEXPRESS</span><br /><br /><br />jika mau stop, tinggal diganti aja net stop<br />nama service seperti MSSQL$SQLEXPRESS bisa dilihat di services.msc atau cmd &gt; sc query<br /><br />untuk memberikan efek perubahan ke system agar service start/stop jalankan script dengan Administrator<br /><br /><br /><br />Refe :<br />Command NET to manage service&nbsp;<a href="http://ss64.com/nt/net_service.html">http://ss64.com/nt/net_service.html</a><br /><a href="http://superuser.com/questions/514057/is-there-a-way-to-restart-a-service-on-a-remote-machine-from-a-batch-script">http://superuser.com/questions/514057/is-there-a-way-to-restart-a-service-on-a-remote-machine-from-a-batch-script</a>

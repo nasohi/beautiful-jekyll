@@ -1,0 +1,14 @@
+---
+layout: post
+title: Konfigurasi mail client Mutt
+date: '2018-09-03T13:50:00.004+07:00'
+author: Nasohi Ciptandani
+tags:
+- Postfix
+- Mail
+modified_time: '2018-09-03T13:50:59.733+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3485530686185264749
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/konfigurasi-mail-client-mutt.html
+---
+
+Mutt adalah mail client dengan tampilan CLI<br /><br /><span style="font-family: Courier New, Courier, monospace;">#apt-get install mutt</span><br /><br />Login user, buatlah file konfigurasi baru untuk mutt di ~/.muttrc dengan script berikut:<br /><br /><span style="font-family: Courier New, Courier, monospace;">set realname = "Nasohi Ciptandani"</span><br /><span style="font-family: Courier New, Courier, monospace;">set from = "nasohi@skill39.id"</span><br /><span style="font-family: Courier New, Courier, monospace;">set use_from = yes</span><br /><span style="font-family: Courier New, Courier, monospace;">set envelope_from = yes</span><br /><span style="font-family: Courier New, Courier, monospace;">set smtp_url = "smtp://nasohi@skill39.id@smtp.skill39.id:25/"</span><br /><span style="font-family: Courier New, Courier, monospace;">set smtp_pass = "p4ssw0rd"</span><br /><br />Simpan file konfigurasi diatas<br /><br />Berikut mencoba mengirim email melalui command line<br /><br /><span style="font-family: Courier New, Courier, monospace;">#mutt -s "Test from mutt" unyil@skill39.id &lt; /tmp/message.txt</span>

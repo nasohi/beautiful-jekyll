@@ -1,0 +1,16 @@
+---
+layout: post
+title: Konfigurasi DFS Replication
+date: '2018-09-08T23:13:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- Windows
+- DFS
+modified_time: '2018-09-08T23:13:30.786+07:00'
+thumbnail: https://i.ytimg.com/vi/34rgHW352qk/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8663376931765850520
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/konfigurasi-dfs-replication.html
+---
+
+DFS<br />Create a Namespace with the name “dfs”<br />Add JKT-DC1 as the second server for this Namespace<br />Create DFS links for the department shares (Helpdesk, Technician, Manager)<br />Create DFS Replication to implement a backup of the department shares on JKT-DC1.<br />The shares should be replicated like this:<br />- JKT-DC2: D:\shares\departments\Helpdesk -&gt; JKT-DC1: C:\backup\Helpdesk<br />- JKT-DC2: D:\shares\departments\Technician -&gt; JKT-DC1: C:\backup\Technician<br />- JKT-DC2: D:\shares\departments\Manager -&gt; JKT-DC1: C:\backup\Manager<br /><br />1. Install DFS Namespace dan DFS Replication di server-server yang akan digunakan.<br />2. Konfigurasi DFS Namespace, buka DFS Management, klik kanan pada menu Namespaces, pilih New Namespace, masukkan namespace sesuai yang ditentukan pada work task.<br />3. Konfigurasi DFS Replication di salah satu server, maka konfigurasi akan tercopy di member server lainnya, berikut screencast nya.<br /><br />Screencast nya silent mode, silakan diamati, ini sebagai referensi aja. Semakin banyak membaca tutorial maka akan semakin menambah wawasan dan semakain memahami berbagai konfigurasi.<br /><br /><br /><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/34rgHW352qk" width="560"></iframe>

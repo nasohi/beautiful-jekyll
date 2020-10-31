@@ -1,0 +1,15 @@
+---
+layout: post
+title: How to fix  error “Could not reliably determine the server’s fully qualified
+  domain name using 127.0.1.1 for ServerName" on apache2
+date: '2015-11-21T14:47:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+- System
+modified_time: '2015-11-21T14:47:32.344+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6579587728069697173
+blogger_orig_url: https://nciptandani.blogspot.com/2015/11/how-to-fix-error-could-not-reliably.html
+---
+
+To fix this problem &nbsp;you need to edit the /etc/apache2/apache2.conf<br /><br />1. Open the /etc/apache2/apache2.conf file with your text editor.<br /><br />&nbsp; &nbsp; #pico /etc/apache2/apache2.conf<br /><br />2. Add the following line:<br /><br />&nbsp; &nbsp; ServerName localhost<br /><br />3. Restart apache2 server:<br />&nbsp; &nbsp; #service apache2 restart<br />&nbsp; &nbsp; Restarting web server: apache2 … waiting ..<br /><br />Now your problem is gone. Enjoy.

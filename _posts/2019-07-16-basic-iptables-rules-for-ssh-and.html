@@ -1,0 +1,13 @@
+---
+layout: post
+title: Basic IPTables rules for SSH and Webserver
+date: '2019-07-16T21:51:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- IPTables
+modified_time: '2019-07-16T21:51:21.281+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8581145810345830701
+blogger_orig_url: https://nciptandani.blogspot.com/2019/07/basic-iptables-rules-for-ssh-and.html
+---
+
+<b>set the default policy to DROP</b><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -P INPUT DROP</span><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -P OUTPUT ACCEPT</span><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -P FORWARD DROP</span><br /><b><br /></b><b>&nbsp;accept anything on localhost</b><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A INPUT -i lo -j ACCEPT</span><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A OUTPUT -o lo -j ACCEPT</span><br /><br /><b>&nbsp;allow traffic once a connection has been made</b><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br /><br /><b>&nbsp;accept anything on ssh port</b><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br /><br /><b>&nbsp;accept anything on http and https port</b><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br /><span style="font-family: Courier New, Courier, monospace;">#iptables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br /><br /><b>&nbsp;to save</b><br /><span style="font-family: Courier New, Courier, monospace;">#apt-get install iptables-persistent</span>

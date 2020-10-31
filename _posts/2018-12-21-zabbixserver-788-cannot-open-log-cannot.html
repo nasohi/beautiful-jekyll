@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'Zabbix_server [788]: cannot open log: cannot create semaphore set: [28] No
+  space left on device'
+date: '2018-12-21T17:57:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Zabbix
+modified_time: '2018-12-21T17:57:18.655+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3528868236702282838
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/zabbixserver-788-cannot-open-log-cannot.html
+---
+
+The zabbix shared memory error is as follows:<br /><b>Zabbix_server [788]: cannot open log: cannot create semaphore set: [28] No space left on device</b><br /><br />Reason for error:<br />The kernel.sem parameter is set too small.<br /><br />Shared memory:<br />You can view the current system shared memory parameter limit by using the ipcs -lm command.<br /><br /><b><span style="font-family: Courier New, Courier, monospace;">#ipcs -lm</span></b><br />------ Shared Memory Limits --------<br />Max number of segments = 4096<br />Max seg size (kbytes) = 67108864<br />Max total shared memory (kbytes) = 18014398442373116<br />Min seg size (bytes) = 1<br /><br />View current coexistence memory parameters:<br /><br /><span style="font-family: Courier New, Courier, monospace;"><b>#cat /proc/sys/kernel/sem</b></span><br />250 32000 32 128<br /><br />Change parameters:<br /><b><span style="font-family: Courier New, Courier, monospace;">#vim /etc/sysctl.conf</span></b><br />Kernel.sem =5010 641280 5010 128<br /><br /><b><span style="font-family: Courier New, Courier, monospace;">#sysctl -p /etc/sysctl.conf</span></b> //Settings take effect immediately<br /><br />5010 SEMMSL max semaphores per array signal set accommodates the maximum number of signals<br />641280 SEMMNS max semaphores system wide Maximum number of all signals<br />5010 SEMOPM max ops per semop call Calls the maximum number of signals in a single signal set<br />128 SEMMNI max number of arrays Maximum value of the signal set<br /><br /><a href="https://www.tracymc.cn/archives/1068">https://www.tracymc.cn/archives/1068</a>

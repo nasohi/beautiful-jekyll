@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Block domain '
+date: '2018-12-03T14:22:00.002+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-12-03T14:22:40.743+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2254089274629770091
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=2254089274629770091
+---
+
+/ip firewall layer7-protocol<br />add name=example.com regexp="^.+(example.com).*\$"<br /><br />/ip firewall filter<br />add action=drop chain=forward comment="Block example.com" in-interface=bridge \<br />&nbsp; &nbsp; layer7-protocol=example.com out-interface=ether1 src-address=\<br />&nbsp; &nbsp; 192.168.0.0/24<br />add action=drop chain=forward comment="Block example IP" dst-address=\<br />&nbsp; &nbsp; 1.2.3.4 in-interface=bridge log=yes out-interface=ether1 src-address=\<br />&nbsp; &nbsp; 192.168.0.0/24

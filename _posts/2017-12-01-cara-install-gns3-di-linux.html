@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara install GNS3 di Linux
+date: '2017-12-01T16:17:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- GNS3
+modified_time: '2017-12-07T00:27:29.851+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2062091056897433003
+blogger_orig_url: https://nciptandani.blogspot.com/2017/12/cara-install-gns3-di-linux.html
+---
+
+Hallo teman-teman,<br /><br />Pembukaan dulu ya, seperti yang kita tahu, GNS3 adalah software simulasi jaringan yang terkenal bisa mensimulasikan ios cisco, iou cisco, virtual machine, dan banyak fitur lainnya.<br /><br />Kali ini saya mau&nbsp;berbagi&nbsp;pengalaman&nbsp;ketikan menginstall GNS3 di Linux, distro yang saya pakai adalah Ubuntu Linux. Berikut adalah langkah-langkahnya:<br /><br />Distribusi berbasis Ubuntu (hanya 64-bit)<br /><br />Petunjuk ini ditujukan untuk Ubuntu dan semua distro berbasis Linux Ubuntu<br /><blockquote class="tr_bq"><b><br />sudo add-apt-repository ppa:gns3/ppa</b>&nbsp;</blockquote><blockquote class="tr_bq"><b>sudo apt-get update</b>&nbsp;</blockquote><blockquote class="tr_bq"><b>sudo apt-get install gns3-gui</b></blockquote><br />Jika kita ingin menjalan IOU juga<br /><br /><blockquote><b>sudo dpkg --add-architecture i386</b>&nbsp;</blockquote><blockquote><b>sudo apt-get update</b>&nbsp;&nbsp;</blockquote><blockquote><b>sudo apt-get install gns3-iou</b></blockquote><br />Semoga bermanfaat teman-teman

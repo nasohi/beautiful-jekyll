@@ -1,0 +1,16 @@
+---
+layout: post
+title: Configure VPN for client access (IKEV2 with machine certificate authentication)
+date: '2019-03-06T17:08:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- VPN
+- Windows
+modified_time: '2019-03-08T20:59:58.100+07:00'
+thumbnail: https://i.ytimg.com/vi/bjrXbfPPvbg/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-356954525262141386
+blogger_orig_url: https://nciptandani.blogspot.com/2019/03/configure-vpn-for-client-access-ikev2.html
+---
+
+Example:<br /><br />VPN<br />Configure VPN for client access.<br />Use the IKEv2 protocol and make sure authentication is done by client certificate<br />Use the IP range 172.16.0.50 – 172.16.0.79<br />The VPN clients should have access to all internal networks<br /><br />Note: Configure hostname, domain, name, IP, etc according to your project.<br /><br />Steps:<br /><br />1. Configure machine certificate for router and client using Windows CA<br />&nbsp; &nbsp; Use template Workstation authentication (configure subject name format to Common name &amp; DNS,&nbsp; Application Policies to Server authentication&nbsp; &amp; Client authentication).<br /><br /><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/bjrXbfPPvbg" width="560"></iframe> <br />2. Configure VPN server using tools -&gt; Routing and Remote access<br /><br /><br /><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/r5KnaASeBQI" width="560"></iframe> <br />3. Connect from client<br /><br /><br /><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/2CR3v2iBy0Y" width="560"></iframe> <br /><br />

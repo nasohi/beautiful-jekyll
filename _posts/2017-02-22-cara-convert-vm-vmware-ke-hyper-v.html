@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cara convert vm vmware vmdk ke hyper-v vhdx dan hyper-v vhdx ke vmware vmdk
+date: '2017-02-22T19:05:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Hyper-V
+- VMWARE
+modified_time: '2018-09-15T17:11:41.782+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2518818886078592050
+blogger_orig_url: https://nciptandani.blogspot.com/2017/02/cara-convert-vm-vmware-ke-hyper-v.html
+---
+
+Download&nbsp;Microsoft Virtual Machine Converter<br /><a href="https://www.microsoft.com/en-us/download/details.aspx?id=42497">https://www.microsoft.com/en-us/download/details.aspx?id=42497</a><br /><br /><br />Run PowerShell as Administrator<br /><br />PS C:\WINDOWS\system32&gt; <b>&nbsp;Import-Module "C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1"</b><br /><br />PS C:\WINDOWS\system32&gt; <b>ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath "D:\2016-WINSRV2.vmdk" -VhdType DynamicHardDisk</b><br /><b>&nbsp;-VhdFormat vhdx -DestinationLiteralPath "D:\WINRSRV2-2016"</b><br /><div><br /></div><div><br /></div><div>More :&nbsp;<a href="http://www.askme4tech.com/how-convert-vmware-virtual-machine-hyper-v">http://www.askme4tech.com/how-convert-vmware-virtual-machine-hyper-v</a><br /><br />Untuk dari Hyper-V vhdx ke VMware vmdk menggunakan tool berikut<br /><a href="https://www.starwindsoftware.com/converter">https://www.starwindsoftware.com/converter</a></div>

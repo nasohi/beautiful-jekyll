@@ -1,0 +1,15 @@
+---
+layout: post
+title: " SQLSTATE[42000]: Syntax error or access violation: 1115 Unknown character
+  set: 'utf8mb4'"
+date: '2018-09-06T11:05:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+- MySQL
+modified_time: '2018-09-06T11:05:16.614+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-529715304930061530
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/sqlstate42000-syntax-error-or-access.html
+---
+
+<b>Error:</b><br /><br />SQLSTATE[42000]: Syntax error or access violation: 1115 Unknown character set: 'utf8mb4'<br /><br /><b>Solution:</b><br /><b><br /></b>Go to config/database.php and replace these two lines with these<br /><br /><br /><span style="font-family: Courier New, Courier, monospace;">'charset' =&gt; 'utf8',&nbsp;</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">'collation' =&gt; 'utf8_unicode_ci',</span>

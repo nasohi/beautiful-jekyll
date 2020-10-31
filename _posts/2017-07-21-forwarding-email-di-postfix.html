@@ -1,0 +1,13 @@
+---
+layout: post
+title: Forwarding email di postfix
+date: '2017-07-21T22:07:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+modified_time: '2017-07-22T22:45:22.257+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4263628889402827873
+blogger_orig_url: https://nciptandani.blogspot.com/2017/07/forwarding-email-di-postfix.html
+---
+
+Forward Emails<br /><br />Forwarding emails dapat dikonfigurasi melalui file aliases di /etc/aliases<br />jalankan perintah dibawah ini untuk memasukkan konfigurasi kedalam postfix.conf<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">postconf -e "alias_maps = hash:/etc/aliases"</span><br /><br />Isi file /etc/aliases seperti contoh dibawah ini:<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">root: nasohi</span><br /><br />atau<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">nasohi: myemail@example.com</span><br /><br />atau juga<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">nasohi: nasohi myemail@example.com</span><br /><br />Jalankan perintah dibawah agar tertulis didalam databases aliases<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">newaliases</span><br /><br />Reload postfix<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/etc/init.d/postfix reload</span><br /><br />Referensi :&nbsp;https://wiki.debian.org/Postfix

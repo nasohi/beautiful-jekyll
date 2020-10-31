@@ -1,0 +1,13 @@
+---
+layout: post
+title: Contoh self signed certificate dengan powershell
+date: '2018-12-02T19:16:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- CA
+modified_time: '2018-12-02T19:16:07.795+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1381733139293663632
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/contoh-self-signed-certificate-dengan.html
+---
+
+Ketika sedang dalam proses development terkadang ingin membutuhkan certificate dengan cepat maka bisa memakai self signed terlebih dahulu, berikut adalah contoh membuat self signed certificate dengan powershell:<div><br /></div><div><span style="font-family: Courier New, Courier, monospace;">New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname company.co.nz, mycompany.co.nz, minecompany.co.nz -notafter $extended_date -KeyLength 4096</span></div><div><br /></div><div>berikut untuk cara export ke pfx, untuk kemudian bisa di import ke pc/server lain</div><div><br /></div><div><div><span style="font-family: Courier New, Courier, monospace;">$pwd = ConvertTo-SecureString -String ‘password1234’ -Force -AsPlainText</span></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: Courier New, Courier, monospace;">$path = ‘cert:\localMachine\my\’ + $cert.thumbprint</span></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: Courier New, Courier, monospace;">Export-PfxCertificate -cert $path -FilePath c:\junk\certificate\powershellcert.pfx -Password $pwd</span></div></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: inherit;">Selengkapnya bisa dilihat di&nbsp;</span></div><div><span style="font-family: inherit;"><a href="https://medium.com/the-new-control-plane/generating-self-signed-certificates-on-windows-7812a600c2d8">https://medium.com/the-new-control-plane/generating-self-signed-certificates-on-windows-7812a600c2d8</a></span></div>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: https://superuser.com/questions/290093/difference-between-etc-crontab-and-crontab-e
+date: '2019-02-01T19:31:00.003+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2019-02-01T19:31:50.320+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-7015123056031962482
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=7015123056031962482
+---
+
+<div>As Ignacio said, /etc/crontab is the system wide crontab.</div><div><br /></div><div>The format of /etc/crontab is like this:</div><div><br /></div><div># m h dom mon dow user&nbsp; &nbsp; &nbsp; command</div><div>*&nbsp; &nbsp;*&nbsp; *&nbsp; &nbsp;*&nbsp; &nbsp;*&nbsp; someuser&nbsp; echo 'foo'</div><div>while crontab -e is per user, it's worth mentioning with no -u argument the crontab command goes to the current users crontab. You can do crontab -e -u &lt;username&gt; to edit a specific users crontab.</div><div><br /></div><div>Notice in a per user crontab there is no 'user' field.</div><div><br /></div><div># m h&nbsp; dom mon dow&nbsp; command</div><div>*&nbsp; &nbsp;*&nbsp; &nbsp;*&nbsp; &nbsp;*&nbsp; &nbsp;*&nbsp; &nbsp;echo 'foo'</div><div>An aspect of crontabs that may be confusing is that root also has its own crontab. e.g. crontab -e -u root will not edit /etc/crontab See Configuring cron.</div><div><br /></div><div>In most Linux distros, per user crontabs are typically stored in: /var/spool/cron/crontabs/&lt;username&gt; (vixie-cron).</div><div><br /></div><div>RHEL based distributions are stored in /var/spool/cron/&lt;username&gt;. (cronie)</div>

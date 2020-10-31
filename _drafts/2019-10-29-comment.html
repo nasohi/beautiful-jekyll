@@ -1,0 +1,13 @@
+---
+layout: post
+title: IPTables redirect untuk local IP
+date: '2019-10-29T18:48:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- IPTables
+modified_time: '2019-10-29T18:48:06.661+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1627981201776474323
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=1627981201776474323
+---
+
+Misalnya ingin mengakses server database di IP: 10.10.10.1 port 5432 dari local IP PC 10.10.10.10, itu bisa menggunakan ssh tunnel namun kali ini akan menggunakan iptables, perlu di ingat bahwa paket dari localhost tidak akan ke chain PREROUTING oleh karena itu perlu bikin rule iptables di chain OUTPUT, berikut command iptables untuk membuat rule tersebut.<div><br /></div><div><span style="font-family: Courier New, Courier, monospace;">iptables -t nat -A OUTPUT -p tcp --dport 5432 -j DNAT --to 10.10.10.10:5432</span></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: inherit;">Kini untuk mengakses server database di IP 10.10.10.1 port 5432 bisa langsung dari local_IP:5432, 5432 adalah port default database postgresql bisa diakses dengan command:</span></div><div><span style="font-family: inherit;"><br /></span></div><div><span style="font-family: Courier New, Courier, monospace;">psql -U postgres -h 10.10.10.10</span></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: inherit;">Dengan perintah-perintah diatas mengakses ke IP 10.10.10.10 port 5432 namun akan diarahkan ke IP Server 10.10.10.1 di port 5432 juga.</span></div><div><div><br /></div><div><br /></div></div>

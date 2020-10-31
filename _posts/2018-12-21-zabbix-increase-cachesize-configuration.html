@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Zabbix: increase-cachesize-configuration-parameter'
+date: '2018-12-21T17:52:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Zabbix
+modified_time: '2018-12-21T17:52:04.726+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5676440266371815075
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/zabbix-increase-cachesize-configuration.html
+---
+
+To find the zabbix_server.conf:<br /><br /><span style="font-family: Courier New, Courier, monospace;">find / -name zabbix_server.conf</span><br /><br />Edit the <b><span style="font-family: Courier New, Courier, monospace;">CacheSize</span></b> from default to <b><span style="font-family: Courier New, Courier, monospace;">32M</span></b>.<br /><br />Then check Monitoring -&gt; Graphs -&gt; Zabbix server -&gt; Zabbix Cache usage graph.

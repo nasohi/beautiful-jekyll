@@ -1,0 +1,13 @@
+---
+layout: post
+title: Dasar konfigurasi NFS Server di Debian
+date: '2019-06-03T23:37:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- NFS
+modified_time: '2019-06-04T00:02:11.025+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1438209578785253459
+blogger_orig_url: https://nciptandani.blogspot.com/2019/06/dasar-konfigurasi-nfs-server-di-debian.html
+---
+
+<div>fileserver IP = 192.168.1.1</div><div><br /></div>Konfigurasi di fileserver<br /><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">fileserver#apt-get install nfs-kernel-server</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">fileserver#mkdir -p /data/marketing</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">fileserver#nano /etc/exports</span></div><div>edit/tambahkan</div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/data/marketing 192.168.1.0/24(rw,no_root_squash)</span></div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">fileserver#/etc/init.d/nfs-kernel-server restart</span></div><div><br /></div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">client1#apt-get install nfs-common</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">client1#mkdir /mnt/marketing</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">client1#mount -t nfs 192.168.1.1:/data/marketing /mnt/marketing</span></div><div><br /></div><div>Kini NFS server sudah dimount di lokal /mnt/marketing, file yang tersimpan di /mnt/marketing folder akan tersimpan di server juga.&nbsp;</div><div><br /></div><div>Untuk NFS options lainnya bisa dilihat disini&nbsp;<a href="https://www.server-world.info/en/note?os=Debian_9&amp;p=nfs&amp;f=1">https://www.server-world.info/en/note?os=Debian_9&amp;p=nfs&amp;f=1</a></div><div><br /></div><div>Agar saat reboot mount tidak hilang bisa disimpan di file /etc/fstab seperti berikut</div><div>edit/tambahkan</div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">192.168.1.1:/data/marketing&nbsp; /mnt/marketing&nbsp; nfs&nbsp; defaults&nbsp; 0&nbsp; &nbsp;0</span></div>

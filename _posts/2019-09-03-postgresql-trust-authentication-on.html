@@ -1,0 +1,13 @@
+---
+layout: post
+title: Postgresql trust  authentication on pg_hba.conf
+date: '2019-09-03T23:24:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- PostgreSQL
+modified_time: '2019-09-03T23:25:05.548+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6550747013587324404
+blogger_orig_url: https://nciptandani.blogspot.com/2019/09/postgresql-trust-authentication-on.html
+---
+
+When trust authentication is specified, PostgreSQL assumes that anyone who can connect to the server is authorized to access the database with whatever database user name they specify (even superuser names). Of course, restrictions made in the database and user columns still apply. This method should only be used when there is adequate operating-system-level protection on connections to the server.<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">vi /var/lib/pgsql/data/pg_hba.conf</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"># "local" is for Unix domain socket connections only</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">local&nbsp; &nbsp;all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;trust</span><br /><div><br /></div><div>login</div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">psql -U postgres</span></div><br /><br />

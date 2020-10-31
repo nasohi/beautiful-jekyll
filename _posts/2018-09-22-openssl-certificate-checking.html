@@ -1,0 +1,14 @@
+---
+layout: post
+title: OpenSSL certificate checking
+date: '2018-09-22T22:24:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- SSL
+modified_time: '2018-09-22T22:26:49.583+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8900600312773121843
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/openssl-certificate-checking.html
+---
+
+<b>Check a certificate</b><br />Information about it (signing authority, expiration date, etc.):<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;openssl x509 -in server.crt -text -noout</span><br /><br /><b>Check a key</b><br />Check the SSL key and verify the consistency:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;openssl rsa -in server.key -check</span><br /><br /><b>Check a CSR</b><br />Verify the CSR and print CSR data filled in when generating the CSR:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;openssl req -text -noout -verify -in server.csr</span><br /><br /><b>Verify a certificate and key matches</b><br />The checksums can be compared to verify that the certificate and key match.<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;openssl x509 -noout -modulus -in server.crt | openssl md5</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;openssl rsa -noout -modulus -in server.key | openssl md5</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;"><b>Verifying that a Certificate is issued by a CA</b></span><br /><span style="font-family: inherit;">Verify that a certificate was issued by a specific CA, given that CA's certificate</span><br /><span style="font-family: courier new, courier, monospace;"><br /></span><span style="font-family: courier new, courier, monospace;">&nbsp; &nbsp;openssl verify -verbose -CAfile cacert.pem server.crt</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br /><span style="font-family: courier new, courier, monospace;">server.crt: OK</span>

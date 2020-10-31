@@ -1,0 +1,14 @@
+---
+layout: post
+title: Simple Load Balancer using IPTables
+date: '2018-04-01T23:25:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- IPTables
+- Linux
+modified_time: '2019-04-03T22:03:41.976+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2364045551116737862
+blogger_orig_url: https://nciptandani.blogspot.com/2018/04/simple-load-balancer-using-iptables.html
+---
+
+<div class="tr_bq">Konfigurasi Linux agar berfungsi sebagai router.<br /><span style="font-family: &quot;courier new&quot;, courier, monospace;"><br /></span><span style="font-family: &quot;courier new&quot;, courier, monospace;">sysctl -w net.ipv4.ip_foraward = 1</span></div><br />Mengkonfigurasi IPTables<br /><span style="font-family: &quot;courier new&quot;, courier, monospace;"><br /></span><span style="font-family: &quot;courier new&quot;, courier, monospace;">iptables -t nat -A PREROUTING -p tcp -i eth1 --dport 80 -m state --state NEW -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.2.2:80</span><br /><span style="font-family: &quot;courier new&quot;, courier, monospace;"><br /></span><span style="font-family: &quot;courier new&quot;, courier, monospace;">iptables -t nat -A PREROUTING -p tcp -i eth1 --dport 80 -m state --state NEW -m statistic --mode nth --every 2 --packet 1 -j DNAT --to-destination 192.168.2.3:80</span><br /><br />Jangan lupa konfigurasi di chain FORWARD jika default chain FORWARD nya drop.<br /><br />Referensi:<br /><a href="https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-3.html">https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-3.html&nbsp;</a>

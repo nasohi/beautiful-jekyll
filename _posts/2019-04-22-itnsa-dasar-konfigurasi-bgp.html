@@ -1,0 +1,17 @@
+---
+layout: post
+title: ITNSA Dasar konfigurasi BGP
+date: '2019-04-22T00:11:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- Router
+- Routing
+- BGP
+modified_time: '2019-04-22T00:11:47.284+07:00'
+thumbnail: https://3.bp.blogspot.com/-PWFZ6ao6e9s/XLyjxE5VQWI/AAAAAAAABW0/YaLaEj79u20ueq5eqZP3eIWcwLHSCFgCQCLcBGAs/s72-c/2019-04-22%2B00_04_26-Window.png
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6875550893229903644
+blogger_orig_url: https://nciptandani.blogspot.com/2019/04/itnsa-dasar-konfigurasi-bgp.html
+---
+
+<div style="text-align: justify;">Dari PC1 agar bisa terhubung ke SRV1, tentu ada beberapa cara routing, mulai dari static route, RIP, EIGRP, OSPF, BGP, dll. Semuanya bisa digunakan untuk menghubungkan antar network yang berbeda, setiap jenis routing mempunyai karakteristik masing-masing. Berikut adalah contoh konfigurasi sederhana menggunakan eBGP, belajar memulai sesuatu dari yang sederhana dengan topologi dibawah ini:</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-PWFZ6ao6e9s/XLyjxE5VQWI/AAAAAAAABW0/YaLaEj79u20ueq5eqZP3eIWcwLHSCFgCQCLcBGAs/s1600/2019-04-22%2B00_04_26-Window.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="362" data-original-width="744" height="311" src="https://3.bp.blogspot.com/-PWFZ6ao6e9s/XLyjxE5VQWI/AAAAAAAABW0/YaLaEj79u20ueq5eqZP3eIWcwLHSCFgCQCLcBGAs/s640/2019-04-22%2B00_04_26-Window.png" width="640" /></a></div><div><br /></div>

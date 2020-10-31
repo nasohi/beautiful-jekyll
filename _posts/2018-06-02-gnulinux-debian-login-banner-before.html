@@ -1,0 +1,15 @@
+---
+layout: post
+title: GNU/LInux Debian login banner before login
+date: '2018-06-02T10:12:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- LKS
+modified_time: '2019-04-29T22:22:22.732+07:00'
+thumbnail: https://i.ytimg.com/vi/gMQZl6IJ2ck/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4407947775931033461
+blogger_orig_url: https://nciptandani.blogspot.com/2018/06/gnulinux-debian-login-banner-before.html
+---
+
+OS: Debian 9<br /><div>Task:</div><div><br /></div><div><div>LOGIN BANNER</div><div>Must be shown before the login prompt. Must appear for local and network logins.</div><div>“Welcome to [hostname] – LKSN 2018”</div></div><div><br /></div><div>How to:</div><div><br /></div><div>For local login edit file /etc/issue</div><div><br /></div><div>For network login (ssh) edit script Banner in /etc/ssh/sshd_config<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Banner /etc/issue</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;">Note:</span><br />Edit /etc/motd for banner after login</div><div><br /></div><div>Video:</div><div><br /></div><div><br /></div><div><br /></div><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/gMQZl6IJ2ck" width="854"></iframe> <br /><br />Untuk mengganti hostname dengan script bisa menggunakan cara berikut<br />ganti hostname secara dynamic sesuai dengan hostname server dengan script&nbsp; <span style="font-family: Courier New, Courier, monospace;">`hostname` </span><span style="font-family: inherit;">jangan lupa tanda ` ` pada hostname.</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Untuk script change_banner.sh dengan isi seperti berikut misalnya</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">echo "*** Welcome in `hostname` *** " &gt; /etc/issue</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">cp /etc/issue /etc/issue.net</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Install sshpass</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: Courier New, Courier, monospace;">sshpass -p 'Skill39' ssh root@10.1.1.10 'bash -s' &lt; change_banner.sh</span><br /><span style="font-family: inherit;"><br /></span>

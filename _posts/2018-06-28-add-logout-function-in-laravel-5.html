@@ -1,0 +1,13 @@
+---
+layout: post
+title: Add Logout Function in Laravel 5
+date: '2018-06-28T23:03:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2018-06-28T23:03:20.279+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6369869921160763966
+blogger_orig_url: https://nciptandani.blogspot.com/2018/06/add-logout-function-in-laravel-5.html
+---
+
+Di file web.php (routes):<br />Tambahkan:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Route::get('logout',\Auth\LoginController@logout');</span></blockquote><br />Di file LoginController.php<br />Tambahkan:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">public function logout(Request $request) {<br />&nbsp; Auth::logout();<br />&nbsp; return redirect('/login');<br />}</span></blockquote><br />Di file LoginController.php paling atas setelah namespace<br />Tambahkan:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">use Auth;<br />use Illuminate\Http\Request;</span></blockquote><br />Sekarang, sudah dapat diakses menggunakan url yourdomain.com/logout&nbsp; dan jika membuat tombol logout jangan lupa tambahkan a href nya.

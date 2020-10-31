@@ -1,0 +1,14 @@
+---
+layout: post
+title: Enable remote management windows server core
+date: '2018-09-01T15:47:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- Windows
+modified_time: '2018-09-01T16:05:03.934+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3109537504090123318
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/enable-firewall-management-windows.html
+---
+
+Berikut perintah nya<br /><div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">netsh advfirewall set currentprofile settings remotemanagement enable</span></div></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: inherit;">Jalankan perintah diatas di windows server core, kemudian&nbsp;</span>lakukan di windows GUI untuk meremote windows firewall pada server core. Dengan cara<span style="font-family: inherit;">&nbsp;buka MMC, add snap-in windows firewall pilih another computer, masukkan nama/ip windows server core.</span></div><div><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Untuk rule remote disk management gunakan perintah berikut, jalankan perintah berikut di windows server core dan GUI.</span><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">netsh advfirewall firewall set rule group=”Remote Volume Management” new enable=yes</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;">Dan banyak hal-hal lainnya yang bisa diremote pada server core dari server GUI.</span></div><div><br /></div><div><br /></div>

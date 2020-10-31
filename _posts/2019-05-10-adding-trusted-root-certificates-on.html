@@ -1,0 +1,14 @@
+---
+layout: post
+title: Adding trusted root certificates on client
+date: '2019-05-10T06:19:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- CA
+modified_time: '2019-05-10T06:19:04.137+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2029333795247708382
+blogger_orig_url: https://nciptandani.blogspot.com/2019/05/adding-trusted-root-certificates-on.html
+---
+
+<b>Mac OS X</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/new-root-certificate.crt</span><br /><br /><b>Windows</b><br /><br />Manual<br /><span style="font-family: Courier New, Courier, monospace;">certutil -addstore -f "ROOT" new-root-certificate.crt</span><br /><br />Automatic<br />Join domain<br /><br /><b>GNU/Linux (Debian/Ubuntu)</b><br />Copy your CA to dir <span style="font-family: Courier New, Courier, monospace;">/usr/local/share/ca-certificates/</span><br />Use command: <span style="font-family: Courier New, Courier, monospace;">sudo cp foo.crt /usr/local/share/ca-certificates/foo.crt</span><br />Update the CA store: <span style="font-family: Courier New, Courier, monospace;">sudo update-ca-certificates</span><br /><br /><br /><br />

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Configure SSH tunnel MySQL
+date: '2020-01-24T00:17:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- MySQL
+modified_time: '2020-01-24T00:18:01.507+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6969980123046375451
+blogger_orig_url: https://nciptandani.blogspot.com/2020/01/configure-ssh-tunnel-mysql.html
+---
+
+Pada postingan ini sederhana sebagai catatan yaitu akan seolah-olah mengakses database pada server melalui local-pc.<br /><div><br /></div><div>local-pc -----------internet----------------server-db</div><div><br /></div><div>server-db dengan IP misal 1.2.3.4</div><div><br /></div><div>Daripada mengakses langsung database melalui IP publik internet yang tidak aman maka lebih baik memanfaatkan protokol SSH yang terenkripsi.</div><div><br /></div><div>command nya sederhana yaitu sebagai berikut:</div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ssh nasohi@1.2.3.4&nbsp;</span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">-L 3306:localhost:3306</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: inherit;">S<span style="font-family: inherit;">etelah berhasil masuk, bisa buka terminal lain/aplikasi database client untuk mengakses database melalu</span>i localhost:3306 pada local-pc</span></div><div><br /></div><div><span style="font-family: inherit;">SSH tunnel ini bisa dimanfaatkan tidak hanya untuk remote database namun bisa disesuaikan dengan port service lainnya.</span></div><div><span style="font-family: inherit;"><br /></span></div><div><span style="font-family: inherit;">Referensi lebih lanjut:&nbsp;</span><a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding">https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding</a><br /><br />Postingan di blog ini tentang mysql&nbsp;<a href="https://nciptandani.blogspot.com/search?q=mysql">https://nciptandani.blogspot.com/search?q=mysql</a></div><div><br /></div><div><br /></div>

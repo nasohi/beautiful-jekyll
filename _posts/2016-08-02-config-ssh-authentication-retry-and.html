@@ -1,0 +1,13 @@
+---
+layout: post
+title: Config SSH authentication retry and timout
+date: '2016-08-02T22:33:00.004+07:00'
+author: Nasohi Ciptandani
+tags:
+- Cisco
+modified_time: '2016-08-02T22:33:38.805+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5281370814594094505
+blogger_orig_url: https://nciptandani.blogspot.com/2016/08/config-ssh-authentication-retry-and.html
+---
+
+<br /><br />1 - Login timeout<br /><br />2 - ssh authentication<br /><br />3 - ssh idle timeout<br /><br />Example<br /><br /><b>Login timeout:&nbsp;</b><br /><br />ip ssh timeout 60<br /><br /><b>auth retries:</b><br /><br />ip ssh authentication-retries 3<br /><br /><b>idle timeout:</b><br /><br />line vty 0 4<br /><br />session-timeout 10<br /><br />exec-timeout 10 0

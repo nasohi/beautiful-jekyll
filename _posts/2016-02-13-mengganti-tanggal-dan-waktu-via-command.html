@@ -1,0 +1,13 @@
+---
+layout: post
+title: Mengganti tanggal dan waktu via command line di debian
+date: '2016-02-13T11:18:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- System
+modified_time: '2016-02-13T12:09:15.610+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-697306897866796202
+blogger_orig_url: https://nciptandani.blogspot.com/2016/02/mengganti-tanggal-dan-waktu-via-command.html
+---
+
+Menyesuaikan time zone<br />#dpk-reconfigure tzdata<br /><br />Manual settings<br />#date --set 2016-02-13<br />#date --set 11:16:00<br /><br />Synchronize to hardware clock<br />#hwclock --systohc<br /><br />Synchronize to&nbsp;ntp server indonesia<br />#ntpdate id.pool.ntp.org<br /><br /><a href="https://wiki.debian.org/DateTime">https://wiki.debian.org/DateTime</a><br /><a href="http://www.debianadmin.com/ntp-server-and-client-configuration-in-debian.html">http://www.debianadmin.com/ntp-server-and-client-configuration-in-debian.html</a><br /><a href="http://www.pool.ntp.org/zone/id">http://www.pool.ntp.org/zone/id</a>

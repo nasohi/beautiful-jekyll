@@ -1,0 +1,14 @@
+---
+layout: post
+title: Contoh program java untuk mengecek/memvalidasi data sesuai dengan string regex
+date: '2017-04-07T10:35:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Programming
+- Java
+modified_time: '2018-07-13T17:24:07.277+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4786585808893284883
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=4786585808893284883
+---
+
+<div class="tr_bq">Dibawah ini&nbsp;saya juga menggunakan Array List</div><br /><br /><blockquote>/*File main.java*/<br /><br /><br />package latihan1;<br />import java.util.ArrayList;<br />import java.util.List;<br />import java.util.regex.Pattern;<br />/**<br />&nbsp;*<br />&nbsp;* @author nasohi<br />&nbsp;*/<br /><br />public class Main {<br />&nbsp; <br />&nbsp; <br /><br />&nbsp; &nbsp; public static void main(String[] args) {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; List&lt;String&gt; names;<br />&nbsp; &nbsp; &nbsp; &nbsp; names = new ArrayList&lt;&gt;();<br />&nbsp; &nbsp; &nbsp; <br />names.add("LOKESH"); <br />names.add("JAVACRAZY"); <br />names.add("NASOHI"); &nbsp;//Incorrect<br />names.add("LOKESH123"); &nbsp;//Incorrect<br /><br />String regex = "^[A-Z]{1,10}$";<br /><br />Pattern pattern = Pattern.compile(regex);<br /><br />names.stream().map((name) -&gt; pattern.matcher(name)).forEachOrdered((matcher) -&gt; {<br />&nbsp; &nbsp; System.out.println(matcher.matches());<br />&nbsp; &nbsp; &nbsp; &nbsp; });<br />&nbsp; &nbsp; }<br /><br />}</blockquote><div><br /></div>

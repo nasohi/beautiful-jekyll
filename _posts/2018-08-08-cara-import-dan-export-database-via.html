@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara import dan export database via command line di MySQL
+date: '2018-08-08T15:22:00.006+07:00'
+author: Nasohi Ciptandani
+tags:
+- MySQL
+modified_time: '2018-08-08T15:22:51.159+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2155952593482195103
+blogger_orig_url: https://nciptandani.blogspot.com/2018/08/cara-import-dan-export-database-via.html
+---
+
+<span style="font-family: inherit;"><span style="background-color: white; white-space: pre;"><b>Cara export:</b></span></span><br /><span style="font-family: inherit;"><span style="background-color: white; white-space: pre;"><br /></span></span><span style="background-color: black; white-space: pre;"><span style="color: white; font-family: Courier New, Courier, monospace;">mysqldump -u username -p database_name &gt; data-dump.sql</span></span><br /><span style="background-color: white; white-space: pre;"><br /></span><span style="background-color: white; white-space: pre;"><b>Cara import:</b></span><br /><span style="background-color: white; white-space: pre;"><br /></span><span style="background-color: black; white-space: pre;"><span style="color: white; font-family: Courier New, Courier, monospace;">mysql -u root -p  CREATE DATABASE new_database;  mysql -u username -p new_database &lt; data-dump.sql</span></span>

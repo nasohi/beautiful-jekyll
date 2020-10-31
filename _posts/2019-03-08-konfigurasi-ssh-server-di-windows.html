@@ -1,0 +1,14 @@
+---
+layout: post
+title: Konfigurasi SSH Server di Windows
+date: '2019-03-08T21:05:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Windows
+- SSH
+modified_time: '2019-03-08T21:05:23.075+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3720714572559491475
+blogger_orig_url: https://nciptandani.blogspot.com/2019/03/konfigurasi-ssh-server-di-windows.html
+---
+
+<div>Kini SSH server (OpenSSH) sudah ada di Windows Server 2019</div><div><br /></div><div>Rangkuman konfigurasi:</div><div><br /></div><div><span style="font-family: Courier New, Courier, monospace;">Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</span></div><div><span style="font-family: Courier New, Courier, monospace;">Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0</span></div><div><span style="font-family: Courier New, Courier, monospace;">Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0</span></div><div><span style="font-family: Courier New, Courier, monospace;">Start-Service sshd</span></div><div><span style="font-family: Courier New, Courier, monospace;">Set-Service -Name sshd -StartupType 'Automatic'</span></div><div><span style="font-family: Courier New, Courier, monospace;">Get-NetFirewallRule -Name *ssh*</span></div><div><br /></div><div>Selengkapnya:</div><div><a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview">https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview</a></div>

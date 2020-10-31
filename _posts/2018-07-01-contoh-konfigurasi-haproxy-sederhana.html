@@ -1,0 +1,13 @@
+---
+layout: post
+title: Contoh konfigurasi HAProxy sederhana
+date: '2018-07-01T00:29:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Haproxy
+modified_time: '2018-07-01T15:06:37.452+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6885583526236468542
+blogger_orig_url: https://nciptandani.blogspot.com/2018/07/contoh-konfigurasi-haproxy-sederhana.html
+---
+
+<div class="tr_bq">Berikut adalah contoh konfigurasi HAProxy sederhana</div><br /><blockquote><span style="background-color: black; color: white; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"># Configure HAProxy to listen on port 80<br />frontend http_front<br />&nbsp; &nbsp;bind *:80<br />&nbsp; &nbsp;stats uri /haproxy?stats<br />&nbsp; &nbsp;default_backend http_back<br /># Configure HAProxy to route requests to webserver nodes on port 8080<br />backend http_back<br />&nbsp; &nbsp;balance roundrobin<br />&nbsp; &nbsp;server webserver1 192.168.99.100:8080 check<br />&nbsp; &nbsp;server webserver2 192.168.99.101:8080 check<br />&nbsp; &nbsp;server webserver3 192.168.99.102:8080 check</span></blockquote><br />Dari contoh konfigurasi diatas, HAProxy hanya masih run di port 80, haproxy akan menangkap traffic dari client kemudian mendistribusikan ke beberapa webserver dengan metode roundrobin. Webserver run di port 8080.

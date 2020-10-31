@@ -1,0 +1,13 @@
+---
+layout: post
+title: Membangun Public Key Infrastructure (PKI)
+date: '2018-08-16T10:18:00.001+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-08-16T10:18:56.923+07:00'
+thumbnail: https://4.bp.blogspot.com/-NiwznKI4nD0/W3TpOHweC5I/AAAAAAAABRI/XuLihXOkHfs7C50VRIY3j-uZIDbKBFu-wCLcBGAs/s72-c/building-a-pki.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2029487932435950834
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=2029487932435950834
+---
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-NiwznKI4nD0/W3TpOHweC5I/AAAAAAAABRI/XuLihXOkHfs7C50VRIY3j-uZIDbKBFu-wCLcBGAs/s1600/building-a-pki.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="413" data-original-width="600" src="https://4.bp.blogspot.com/-NiwznKI4nD0/W3TpOHweC5I/AAAAAAAABRI/XuLihXOkHfs7C50VRIY3j-uZIDbKBFu-wCLcBGAs/s1600/building-a-pki.jpg" /></a></div><br /><br />Salah satu cara untuk memahami konsep adalah dengan melihat diagram, dengan diagram diatas bisa melihat alur kerja public key infrastructure.<br />Sumber:<a href="https://cybersecuritynews.co.uk/how-does-public-key-infrastructure-pki-work/">&nbsp;https://cybersecuritynews.co.uk/how-does-public-key-infrastructure-pki-work/</a><br /><br />CA (Root)/Offline Root CA adalah puncak dari hirarki PKI yang berhak mengeluarkan certificate, untuk alasan keamanan server CA root tidak join domain, tidak konek network (offline), self signed certificate,<br /><br />Subordinate CA yang akan online, yang menerima offline certificate signed dari Root CA, dan mengeluarkan certificate untuk keperluan misalnya HTTPS, VPN, dll.

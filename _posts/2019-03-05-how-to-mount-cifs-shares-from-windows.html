@@ -1,0 +1,13 @@
+---
+layout: post
+title: How to Mount CIFS Shares from Windows Command Line
+date: '2019-03-05T16:40:00.007+07:00'
+author: Nasohi Ciptandani
+tags:
+- Windows
+modified_time: '2019-03-05T16:40:59.879+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3357325697044719968
+blogger_orig_url: https://nciptandani.blogspot.com/2019/03/how-to-mount-cifs-shares-from-windows.html
+---
+
+Connect Network Drive<br />To map a network drive from windows command line:<br /><br />Click Start, and then click Run -&gt; CMD<br /><br />Type the following, replacing Z: with drive letter you want to assign to the shared resource:<br /><span style="font-family: Courier New, Courier, monospace;">net use Z: \\computer_name\share_name /PERSISTENT:YES</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span>Disconnect Network Drive<br />To disconnect a mapped drive:<br /><br />Type the following, replacing Z: with drive letter of the shared resource:<br /><br /><span style="font-family: Courier New, Courier, monospace;">net use&nbsp; Z: /delete</span><br /><div><br /></div>

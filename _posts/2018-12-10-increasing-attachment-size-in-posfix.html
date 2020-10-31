@@ -1,0 +1,13 @@
+---
+layout: post
+title: Increasing Attachment Size in Posfix
+date: '2018-12-10T14:11:00.004+07:00'
+author: Nasohi Ciptandani
+tags:
+- Postfix
+modified_time: '2018-12-10T14:11:35.495+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2473272969449620195
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/increasing-attachment-size-in-posfix.html
+---
+
+Postfix by default restrict attachment size to approx 10MB i.e. 10240000 bytes.<br /><br />You can check it using following command:<br /><br /><span style="font-family: Courier New, Courier, monospace;">postconf | grep message_size_limit</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span>To change attachment-size to say 50 MB, run a command like:<br /><br /><span style="font-family: Courier New, Courier, monospace;">postconf -e message_size_limit=52428800</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;"><a href="https://easyengine.io/tutorials/mail/postfix-attachment-size/">https://easyengine.io/tutorials/mail/postfix-attachment-size/</a></span>

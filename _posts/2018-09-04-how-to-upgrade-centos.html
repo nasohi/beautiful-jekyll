@@ -1,0 +1,13 @@
+---
+layout: post
+title: How to upgrade Centos
+date: '2018-09-04T16:25:00.005+07:00'
+author: Nasohi Ciptandani
+tags:
+- CentOS
+modified_time: '2018-09-04T16:25:48.267+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3242264842268100415
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/how-to-upgrade-centos.html
+---
+
+e.g. to update your 7.4.1708 system to 7.5.1804, use the following procedure:<br /><br />First, ask your system what version you’re on now:<br /><br /><span style="font-family: Courier New, Courier, monospace;">$ cat /etc/redhat-release</span><br /><span style="font-family: Courier New, Courier, monospace;">CentOS Linux release <b>7.4.1708</b> (Core)</span><br /><br />Next, upgrade with:<br /><br /><span style="font-family: Courier New, Courier, monospace;">$ sudo yum clean all</span><br /><span style="font-family: Courier New, Courier, monospace;">$ sudo yum upgrade</span><br /><span style="font-family: Courier New, Courier, monospace;">$ sudo systemctl reboot</span><br /><br />Finally, once this is done, you can verify that you’re running the latest build with:<br /><br /><span style="font-family: Courier New, Courier, monospace;">$ cat /etc/redhat-release</span><br /><span style="font-family: Courier New, Courier, monospace;">CentOS Linux release <b>7.5.1804</b> (Core)</span>

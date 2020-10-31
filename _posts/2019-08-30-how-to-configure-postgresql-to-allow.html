@@ -1,0 +1,13 @@
+---
+layout: post
+title: How to Configure PostgreSQL to allow remote connection
+date: '2019-08-30T11:02:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- PostgreSQL
+modified_time: '2019-08-30T11:02:07.982+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3169987859135709340
+blogger_orig_url: https://nciptandani.blogspot.com/2019/08/how-to-configure-postgresql-to-allow.html
+---
+
+<span style="font-family: inherit;"><b>Example:</b></span><br />db-srv-10 with ip 192.168.1.1<br />user database: default postgres<br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;"><b>Configure:</b></span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">find / -name "postgresql.conf"</span><br /><br />/var/lib/pgsql/data/postgresql.conf<br /><br /><span style="font-family: Courier New, Courier, monospace;">vi&nbsp;/var/lib/pgsql/data/postgresql.conf</span><br /><br />listen_addresses = 'localhost'<br /><br />with<br /><br />listen_addresses = '*'<br /><br /><span style="font-family: Courier New, Courier, monospace;">find / -name "pg_hba.conf"</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">vi /var/lib/pgsql/data/pg_hba.conf</span><br /><br />host&nbsp; &nbsp; all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 192.168.1.024&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;md5<br /><br /><b>Test:</b><br /><br />&nbsp;<span style="font-family: Courier New, Courier, monospace;">psql -h 192.168.1.10 -U postgres</span>

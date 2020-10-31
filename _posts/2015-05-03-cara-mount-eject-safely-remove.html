@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara mount, eject & safely remove flashdisk/pendrive di linux
+date: '2015-05-03T10:23:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+modified_time: '2015-09-13T09:26:40.315+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4362200401292612755
+blogger_orig_url: https://nciptandani.blogspot.com/2015/05/cara-mount-eject-safely-remove.html
+---
+
+Kalau linux yang kita install mode CLI, berikut adalah cara mount, eject &amp; safely remove flashdisk di linux :<br /><br />1. Tancapkan flashdisk/pendrive<br /><br />2.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23fdisk" rel="nofollow">#fdisk</a>  -l (untuk memeriksa letak/nama device flashdisk tersebut)<br /><br />3.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23mkdir" rel="nofollow">#mkdir</a>  /media/flashdisk&nbsp; (membuat folder tempat mount flashdisk)<br /><br />3.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23mount" rel="nofollow">#mount</a>  /dev/sdb1 / media/flashdisk (mount flashdisk ke media/flashdisk dan sdb1 adalah nama/letak devicenya).<br /><br />4.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23cd" rel="nofollow">#cd</a>  /media/flashdisk (masuk dalam media flashdisk)<br /><br />5.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23ls" rel="nofollow">#ls</a>  (melihat isi flashdisk, disini sudah bisa mengakses isi flashdisk)<br /><br /><a name='more'></a><br /><br />6.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23umount" rel="nofollow">#umount</a>  /media/flashdisk&nbsp; (unmount)<br /><br />7.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23eject" rel="nofollow">#eject</a>  /dev/sdb&nbsp; atau bisa menggunakan udisks<br /><br />7.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23apt" rel="nofollow">#apt</a>  -get install udisks (install)<br /><br />7.  <a class="ot-hashtag aaTEdf" href="https://plus.google.com/s/%23udisks" rel="nofollow">#udisks</a>  --detach /dev/sdb<br /><br />Semoga bermanfaat. 

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Configure Reverse Proxy With Apache2 on Debian 9
+date: '2019-07-16T20:38:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Apache2
+modified_time: '2019-07-16T20:38:23.530+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-220070856902046294
+blogger_orig_url: https://nciptandani.blogspot.com/2019/07/configure-reverse-proxy-with-apache2-on.html
+---
+
+<b>Load modules</b><br /><span style="font-family: Courier New, Courier, monospace;">#a2enmod proxy</span><br /><span style="font-family: Courier New, Courier, monospace;">#a2enmod proxy_http</span><br /><br /><b>Virtualhost Configuration</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#cd /etc/apache2/sites-available/</span><br /><span style="font-family: Courier New, Courier, monospace;">#vi myproxyweb</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">&lt;VirtualHost *:80&gt;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; ServerName mywebsite.id</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; ProxyPass&nbsp; &nbsp; &nbsp; &nbsp;/&nbsp; &nbsp; &nbsp; &nbsp;http://192.168.1.1:8080/</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; ProxyPassReverse&nbsp; &nbsp;/&nbsp; &nbsp; http://192.168.1.1:8080/</span><br /><span style="font-family: Courier New, Courier, monospace;">&lt;/VirtualHost&gt;</span><br /><br /><b>Disable Default</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#a2dissite default</span><br /><br /><b>Enable new Virtualhost</b><br /><b><br /></b><span style="font-family: Courier New, Courier, monospace;">#a2ensite myproxyweb</span><br /><br /><b>Restart Apache</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#systemctl restart apache2</span><br /><br />OK!

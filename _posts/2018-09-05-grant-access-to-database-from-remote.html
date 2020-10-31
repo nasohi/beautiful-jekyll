@@ -1,0 +1,13 @@
+---
+layout: post
+title: GRANT ACCESS TO A DATABASE FROM REMOTE
+date: '2018-09-05T17:35:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- MySQL
+modified_time: '2018-09-05T17:35:48.494+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6452514659761701496
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/grant-access-to-database-from-remote.html
+---
+
+Edit my.cnf<br /><br />Supaya database server bisa diremote dari pc lain, beri tanda pagar pada script:<br /><br /><span style="font-family: Courier New, Courier, monospace;">#skip-networking</span><br />dan edit<br /><span style="font-family: Courier New, Courier, monospace;">bind-address=YOUR-SERVER-IP</span><br /><br />Buatlah sebuah database <b>itnsa</b> untuk <b>competitior1</b> dengan password: <b>Skill39</b> diakses dari IP<b> 1.2.3.4</b>:<br />Jawab:<br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; CREATE DATABASE itnsa;</span><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; GRANT ALL ON itnsa.* TO competitor1@'1.2.3.4' IDENTIFIED BY 'Skill39';</span><br /><br />Tambahan<br />Cara edit<br /><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; use mysql;</span><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; update db set Host='1.2.3.5' where Db='itnsa';</span><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; update user set Host='1.2.3.5' where user='competitor1';</span><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; update user set password=PASSWORD("NEWPASSWORD") where user='it1';</span><br /><span style="font-family: Courier New, Courier, monospace;"></span><br /><span style="font-family: Courier New, Courier, monospace;">mysql&gt; flush privileges;</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;">Cara akses</span><br /><span style="font-family: inherit;"></span><br /><span style="font-family: Courier New, Courier, monospace;">#mysql -u root -h YOUR-SERVER-IP -p</span>

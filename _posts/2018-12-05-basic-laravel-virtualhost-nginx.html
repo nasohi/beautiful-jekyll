@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Basic laravel virtualhost nginx configuration '
+date: '2018-12-05T15:03:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2018-12-05T15:03:32.824+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1559813141720984568
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/basic-laravel-virtualhost-nginx.html
+---
+
+<span style="font-family: Courier New, Courier, monospace;">server {</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; listen&nbsp; &nbsp;80 default_server;</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; root /var/www/laravel/public/;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; index index.php index.html index.htm;</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; location / {</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try_files $uri $uri/ /index.php$is_args$args;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; }</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; # pass the PHP scripts to FastCGI server listening on /var/run/php5-fpm.sock</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; location ~ \.php$ {</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try_files $uri /index.php =404;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fastcgi_pass unix:/var/run/php5-fpm.sock;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fastcgi_index index.php;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; include fastcgi_params;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; }</span><br /><span style="font-family: Courier New, Courier, monospace;">}</span>

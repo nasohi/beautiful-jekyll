@@ -1,0 +1,13 @@
+---
+layout: post
+title: Routes Laravel 404 Not Found Apache Webserver
+date: '2018-04-26T23:54:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2018-12-05T15:04:45.359+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8554238657450354937
+blogger_orig_url: https://nciptandani.blogspot.com/2018/04/routes-laravel-404-not-found.html
+---
+
+Debian<br />Aktifkan modul rewrite dengan cara:<br /><br /><blockquote class="tr_bq"><b>a2enmod rewrite</b></blockquote><br />Buka file konfigurasi website anda misal di /etc/apache2/sites-available/000-default.conf dan kemudian cari bagian:<br /><br /><blockquote class="tr_bq"><b>&lt;Directory /var/www/&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; Options Indexes FollowSymLinks<br />&nbsp; &nbsp; &nbsp; &nbsp; AllowOverride None<br />&nbsp; &nbsp; &nbsp; &nbsp; Require all granted<br />&lt;/Directory&gt;</b></blockquote><br />kemudian ubah menjadi seperti dibawah ini:<br /><br /><blockquote class="tr_bq"><b>&lt;Directory /var/www/&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; Options Indexes FollowSymLinks<br />&nbsp; &nbsp; &nbsp; &nbsp; AllowOverride All<br />&nbsp; &nbsp; &nbsp; &nbsp; Require all granted<br />&lt;/Directory&gt;</b></blockquote>

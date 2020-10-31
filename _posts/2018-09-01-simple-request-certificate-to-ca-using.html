@@ -1,0 +1,14 @@
+---
+layout: post
+title: Simple request certificate to CA using certreq
+date: '2018-09-01T17:02:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Windows
+- CA
+modified_time: '2018-09-01T17:02:42.314+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3100780279708235280
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/simple-request-certificate-to-ca-using.html
+---
+
+<div>There are some ways to make a certificate, you can use web enrollment, command enrollment, GUI enrollment.</div><div><br /></div><div>Below steps are using command</div><div><br /></div><div>Open an elevated Powershell session</div><div>Launch Notepad</div><div><br /></div><div>Add the following lines to the new file:</div><div><br /></div><div><span style="font-family: Courier New, Courier, monospace;">[NewRequest]</span></div><div><span style="font-family: Courier New, Courier, monospace;">Subject="cn=yourServer.yourDomain.com"</span></div><div><span style="font-family: Courier New, Courier, monospace;">Exportable=TRUE</span></div><div><span style="font-family: Courier New, Courier, monospace;">[RequestAttributes]</span></div><div><span style="font-family: Courier New, Courier, monospace;">CertificateTemplate="Web Server"</span></div><div><br /></div><div>Save the file as something ending in .inf, for example iis.inf</div><div><br /></div><div><span style="font-family: inherit;">Run:</span><span style="font-family: Courier New, Courier, monospace;"> certreq -new d:\temp\iis.inf d:\temp\request.txt</span></div><div><span style="font-family: inherit;">Run:</span><span style="font-family: Courier New, Courier, monospace;"> certreq -submit d:\temp\request.txt d:\temp\iiscert.cer</span></div><div><span style="font-family: inherit;">Run:</span><span style="font-family: Courier New, Courier, monospace;"> certreq -accept d:\temp\iiscert.cer</span></div>

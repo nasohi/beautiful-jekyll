@@ -1,0 +1,13 @@
+---
+layout: post
+title: Laravel 404 not found but rote exists
+date: '2020-01-24T01:04:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2020-01-24T01:05:26.864+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-432264367469137166
+blogger_orig_url: https://nciptandani.blogspot.com/2020/01/laravel-404-not-found-but-rote-exists.html
+---
+
+This is my case if the webserver is apache2/httpd make sure the following directive is configured properly when installing Laravel.<br /><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">DocumentRoot "/var/www/html/laravel/public/"</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&lt;Directory "/var/www/html/laravel/public"&gt;</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Allowoverride All</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&lt;/Directory&gt;</span></div></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: inherit;">More references:</span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp;</span><a href="https://laravel.io/forum/06-11-2014-not-found-but-route-exists">https://laravel.io/forum/06-11-2014-not-found-but-route-exists</a></div>

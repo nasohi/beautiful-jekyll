@@ -1,0 +1,15 @@
+---
+layout: post
+title: Basic VPN Site to Site (IKEV2) on Windows Server Core summary
+date: '2019-03-05T15:04:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- VPN
+- Windows
+modified_time: '2019-03-08T21:01:01.121+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6509810856837365480
+blogger_orig_url: https://nciptandani.blogspot.com/2019/03/basic-vpn-site-to-site-ikev2-on-windows.html
+---
+
+Open Powershell<br /><br /><b>Install Remote Access </b>feature by<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Install-WindowsFeature RemoteAccess</span><br /><br /><b>Install Remote Access PowerShell </b>module by:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Install-WindowsFeature RSAT-RemoteAccess-PowerShell</span><br /><br /><b>Install the Routing feature</b> by:<br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Install-WindowsFeature Routing</span><br /><br />Type <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Restart-Computer</span> to restart the computer.<br /><br /><b>Install RemoteAccess VPN S2S</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Install-RemoteAccess -VpnType VpnS2S</span><br /><br /><b>Add VPN S2S&nbsp; Interface</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Add-VpnS2SInterface -Name "EDGE1" 131.107.0.20 -Protocol IKEv2 -AuthenticationMethod PSKOnly -SharedSecret "ABC" -IPv4Subnet 10.2.0.0/24:100&nbsp;</span><br /><br />https://docs.microsoft.com/en-us/powershell/module/remoteaccess/add-vpns2sinterface?view=win10-ps<br /><br /><b>Connect VPN S2S Interface</b><br /><br />https://docs.microsoft.com/en-us/powershell/module/remoteaccess/connect-vpns2sinterface?view=win10-ps<br /><br /><b>Get VPN S2S Interface</b><br /><br />https://docs.microsoft.com/en-us/powershell/module/remoteaccess/get-vpns2sinterface?view=win10-ps<br /><br /><br />Reference:<br /><a href="https://docs.microsoft.com/en-us/powershell/module/remoteaccess/">https://docs.microsoft.com/en-us/powershell/module/remoteaccess/</a>

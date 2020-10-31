@@ -1,0 +1,13 @@
+---
+layout: post
+title: Enable GUI for root
+date: '2017-05-06T13:33:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+modified_time: '2017-05-06T13:33:31.650+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4877401032685948116
+blogger_orig_url: https://nciptandani.blogspot.com/2017/05/enable-gui-for-root.html
+---
+
+1. Open "/etc/pam.d/gdm3" with vi, pico, nano, etc.<br />&nbsp; &nbsp;<br />&nbsp; &nbsp; #pico /etc/pam.d/gdm3<br /><br />2. &nbsp;Search "auth &nbsp; &nbsp; required &nbsp; &nbsp; pam_succeed_if.so &nbsp;user &nbsp;!= root &nbsp; quiet_success" &nbsp;, comment it out like below:<br /><br />&nbsp; &nbsp; #auth &nbsp; &nbsp; required &nbsp; &nbsp; pam_succeed_if.so &nbsp;user &nbsp;!= root &nbsp; quiet_success<br /><div><br /></div>

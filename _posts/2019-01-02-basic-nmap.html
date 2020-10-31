@@ -1,0 +1,13 @@
+---
+layout: post
+title: Basic NMAP
+date: '2019-01-02T17:21:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- NMAP
+modified_time: '2019-01-02T18:01:56.468+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2860674610317521619
+blogger_orig_url: https://nciptandani.blogspot.com/2019/01/basic-nmap.html
+---
+
+NMAP memiliki banyak options, berikut adalah contoh dasar penggunaan nmap:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo&nbsp; nmap -sS -O 127.0.0.1</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span>-sS<br />TCP SYN scan<br /><br />-O<br />Enable Operating System detection<br /><br />-sU<br />UDP ports scan<br /><br />-sS<br />TCP SYN scan<br /><br />-p 20-25<br />Scan on ports 20 to 25<br /><br />-F<br />Fast (limited port) scan<br /><br />-Pn<br />Treat all hosts as online -- skip host discovery<br /><br /><b>TCP SYN and UDP scan for all ports</b><br /><br />nmap -sS -sU -p 1-65535 192.168.0.0/24<br /><br /><a href="https://nmap.org/book/man-briefoptions.html">https://nmap.org/book/man-briefoptions.html</a>

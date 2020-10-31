@@ -1,0 +1,15 @@
+---
+layout: post
+title: Install Packet Tracer 7.3.0 on Ubuntu 19.10
+date: '2020-02-22T20:31:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+- ITNSA
+- Packet Tracer
+modified_time: '2020-02-22T20:31:31.131+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1444101651665213911
+blogger_orig_url: https://nciptandani.blogspot.com/2020/02/install-packet-tracer-730-on-ubuntu-1910.html
+---
+
+1. Download Packet Tracer 7.3.0 from Netacad website.<br /><br /><a href="https://www.netacad.com/portal/resources/packet-tracer">https://www.netacad.com/portal/resources/packet-tracer</a><br /><br />2. Install Dependency<br /><br /><span style="font-family: Courier New, Courier, monospace;">wget http://mirrors.kernel.org/ubuntu/pool/main/d/double-conversion/libdouble-conversion1_2.0.1-4ubuntu1_amd64.deb</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">sudo apt install ./libdouble-conversion1_2.0.1-4ubuntu1_amd64.deb</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">wget http://mirrors.kernel.org/ubuntu/pool/main/q/qt-at-spi/qt-at-spi_0.4.0-3_amd64.deb</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">sudo apt install ./qt-at-spi_0.4.0-3_amd64.deb</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">sudo apt --fix-broken install</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;">3. Install Packet Tracer&nbsp;</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: Courier New, Courier, monospace;">dpkg -i PacketTracer_730_amd64.deb</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;">Done.</span>

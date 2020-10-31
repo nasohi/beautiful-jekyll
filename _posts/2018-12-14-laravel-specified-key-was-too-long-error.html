@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Laravel: Specified key was too long error'
+date: '2018-12-14T16:42:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2018-12-14T16:42:03.067+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8693903375292393070
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/laravel-specified-key-was-too-long-error.html
+---
+
+Edit <b>AppServiceProvider.php</b> as follows:<br /><br />use Illuminate\Support\Facades\Schema;<br /><br />public function boot()<br />{<br />&nbsp; &nbsp; Schema::defaultStringLength(191);<br />}<br /><br />Reference:&nbsp;<a href="https://laravel-news.com/laravel-5-4-key-too-long-error">https://laravel-news.com/laravel-5-4-key-too-long-error</a>

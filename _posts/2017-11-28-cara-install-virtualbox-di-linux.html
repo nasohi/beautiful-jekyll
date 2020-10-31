@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cara install VirtualBox di Linux
+date: '2017-11-28T15:27:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- VirtualBox
+- DKMS
+modified_time: '2017-11-28T15:27:16.816+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-4209781232876653413
+blogger_orig_url: https://nciptandani.blogspot.com/2017/11/cara-install-virtualbox-di-linux.html
+---
+
+VirtualBox adalah&nbsp;salah satu software virtualisasi buatan oracle. Dengan VirtualBox kita bisa menjalankan sistem operasi untuk keperluan banyak hal seperti untuk software testing, network simulation, dll.&nbsp;<div><br /></div><div>Berikut adalah langkah-langkah untuk menginstall VirtualBox di Linux, kali ini saya menggunakan Kali Linux.</div><div><br /></div><div>Pastikan Kali Linux sudah mempunyai repository, kemudian update untuk mendapatkan paket-paket software terbaru</div><blockquote class="tr_bq"><b><br />#pico /etc/apt/sources.list</b></blockquote><div><br /></div><div>deb http://http.kali.org/kali kali-rolling main contrib non-free</div><div><br /></div><div><br /></div><blockquote class="tr_bq"><b>#apt-get update</b></blockquote><div><br /></div><div><div>Setelah update Anda perlu menginstal paket dkms.</div><div><br /></div><blockquote class="tr_bq"><b>#apt-get install dkms</b></blockquote><div><br /></div><div>Dynamic Kernel Module Support (DKMS) adalah program / framework untuk pembuatan modul kernel Linux.&nbsp;<a href="https://github.com/dell/dkms">https://github.com/dell/dkms</a></div><div><br /></div><div><br /></div><div>Kemudian tinggal install VirtualBox nya dengan perintah dibawah ini</div><blockquote class="tr_bq"><b><br />#apt-get install virtualbox</b></blockquote><br />Setelah selesai bisa lihat aplikasi virtualbox di menu apps atau jalankan via terminal ketikkan #virtualbox<br /><br />Sekian tutorial kali ini, semoga bermanfaat teman teman.&nbsp;</div>

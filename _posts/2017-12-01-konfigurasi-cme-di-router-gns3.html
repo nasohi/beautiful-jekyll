@@ -1,0 +1,15 @@
+---
+layout: post
+title: Konfigurasi CME di Router GNS3
+date: '2017-12-01T16:11:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- Router
+- CME
+- GNS3
+modified_time: '2017-12-01T16:13:51.750+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2771554767538695418
+blogger_orig_url: https://nciptandani.blogspot.com/2017/12/konfigurasi-cme-di-router-gns3.html
+---
+
+Hallo semua<br /><br />Hari ini saya akan memberikan langkah-langah CME bekerja pada router GNS3 / Dynamips.<br />Langkah yang saya ikuti:<br /><br />- Buat Proyek GNS3 baru<br /><br />- Dapatkan versi IOS "c3745-adventerprisek9-mz.124-9.bin". Pastikan gunakan router versi itu, coba jalankan dulu dan ketikkan show telephony-service, pastikan command tersedia<br /><br />- Dapatkan file CME "cme-full-4.3.0.0.tar"<br /><br />- Buat router baru 3745<br /><br />- Edit properties dan ganti ruang PCMCI disk0 menjadi misal&nbsp; 100MB itu sudah cukup<br /><br />- Jalankan Router<br /><br />- Siapkan server TFTP di mana Anda akan meletakkan file "cme-full-4.3.0.0.tar" di router 3745<br /><br />- Pastikan Anda bisa melakukan ping ke server TFTP dari router (sehingga server TFTP dapat diakses dari router)<br /><br />- Lakukan "<b>erase flash</b>:" di router<br /><br />- Lakukan "<b>format flash</b>:" di router untuk membuat filesystem DOS<br /><br />- Lakukan "<b>&nbsp; archieve tar / xtract tftp: //x.x.x.x/cme-full-4.3.0.0.tar flash:</b>&nbsp; "&nbsp; (X = alamat IP server TFTP )<br /><br />- Pastikan semua file terekstrak&nbsp;&nbsp;ke dalam flash router.<br /><br /><br />Untuk kebutuhan file-file nya ini&nbsp;yang saya dapatkan di internet, silakan download&nbsp;<a href="https://drive.google.com/drive/u/0/folders/0Bxa1CYWrEjFLNjZoSFpZNVNXZUk">FILE</a>S<br /><br /><br /><br />Semoga bermanfaat teman-teman

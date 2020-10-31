@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara zip/unzip di linux command line
+date: '2018-09-03T17:41:00.004+07:00'
+author: Nasohi Ciptandani
+tags:
+- Command
+modified_time: '2018-09-03T17:41:48.378+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-7870377019001741290
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/cara-zipunzip-di-linux-command-line.html
+---
+
+Cukup mudah untuk zip di linux command line, kali ini menggunakan perintah zip<br /><br /><span style="font-family: Courier New, Courier, monospace;">#apt-get install zip</span><br /><br />caranya<br /><br />buatlah sebuah folder dan masukkan file-file kedalam folder tersebut untuk dizip<br /><br />misalnya ada file1.txt file2.jpg file3.doc<br />buatlah folder dokumen,<br /><br /><span style="font-family: Courier New, Courier, monospace;">#mkdir dokumen</span><br /><span style="font-family: Courier New, Courier, monospace;">#cp file1.txt file2.jpg file3.doc dokumen </span><span style="font-family: inherit;">atau #</span><span style="font-family: Courier New, Courier, monospace;">cp file* dokumen</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;">Selanjutnya tinggal gunakan perintah zip, dengan format </span><span style="font-family: Courier New, Courier, monospace;">zip -r nama_dokumen.zip folder_dokumen</span><br /><span style="font-family: inherit;">option -r artinya recursive</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#zip -r dokumen.zip dokumen</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;">Untuk unzip gunakan perintah</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span>#<span style="font-family: Courier New, Courier, monospace;">unzip dokumen.zip</span>

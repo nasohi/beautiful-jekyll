@@ -1,0 +1,11 @@
+---
+layout: post
+title: Contoh ikev2 powershell
+date: '2018-12-02T19:17:00.001+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-12-02T19:17:08.852+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8874059644081311178
+---
+
+### Install RRAS role<br />Import-Module ServerManager<br />Install-WindowsFeature RemoteAccess -IncludeManagementTools<br />Add-WindowsFeature -name Routing -IncludeManagementTools<br /><br />### !!! NOTE: A reboot of the machine might be required here after which the script can be executed again.<br /><br />### Install S2S VPN<br />Import-Module RemoteAccess<br />if ((Get-RemoteAccess).VpnS2SStatus -ne "Installed")<br />{<br />Install-RemoteAccess -VpnType VpnS2S<br />}<br /><br />### Add and configure S2S VPN interface<br />Add-VpnS2SInterface -Protocol IKEv2 -AuthenticationMethod PSKOnly -NumberOfTries 3 -ResponderAuthenticationMethod PSKOnly -Name $VpnS2SInterfaceName -Destination $AzureGatewayIP -IPv4Subnet $IPv4Subnet -SharedSecret $SharedSecret<br />Set-VpnServerIPsecConfiguration -EncryptionType MaximumEncryption<br />Set-VpnS2Sinterface -Name $VpnS2SInterfaceName -InitiateConfigPayload $false -Force<br /><br />### Set S2S VPN connection to be persistent by editing the router.pbk file (required admin priveleges)<br />Set-PrivateProfileString $env:windir\System32\ras\router.pbk $VpnS2SInterfaceName "IdleDisconnectSeconds" "0"<br />Set-PrivateProfileString $env:windir\System32\ras\router.pbk $VpnS2SInterfaceName "RedialOnLinkFailure" "1"<br /><br />### Restart the RRAS service<br />Restart-Service RemoteAccess<br /><br />### Dial-in to Azure gateway<br />Connect-VpnS2SInterface -Name $VpnS2SInterfaceName<br /><div><br /></div>

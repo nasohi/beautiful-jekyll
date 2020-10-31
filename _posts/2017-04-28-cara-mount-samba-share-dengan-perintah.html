@@ -1,0 +1,15 @@
+---
+layout: post
+title: Cara mount samba share dengan perintah mount
+date: '2017-04-28T15:12:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+- System
+- Command
+modified_time: '2017-04-28T15:15:11.697+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-745301339749085081
+blogger_orig_url: https://nciptandani.blogspot.com/2017/04/cara-mount-samba-share-dengan-perintah.html
+---
+
+Berikut adalah perintahnya:<br /><br /><blockquote class="tr_bq">#mkdir /mnt/lnxsrv1-data1 sebagai tempat untuk mount server lnxsrv1 dengan ip 10.12.13.100&nbsp;</blockquote><blockquote class="tr_bq">#mount -t cifs -o username=nasohi,workgroup=workgroup,password=Skills39 //10.12.13.100/data1 /mnt/lnxsrv1-data1/</blockquote><div><br /></div><div>Untuk melihat hasilnya mount dengan perintah:</div><div><br /></div><blockquote class="tr_bq">#mount</blockquote><br />maka muncul dibawah ini:<br /><br />//10.12.13.100/data1 on /mnt/lnxsrv1-data1 type cifs (rw,relatime,vers=1.0,cache=strict,username=nasohi,domain=workgroup,uid=0,noforceuid,gid=0,noforcegid,addr=10.12.13.100,unix,posixpaths,serverino,mapposix,acl,rsize=1048576,wsize=65536,actimeo=1)<br /><br />atau cek saja di folder /mnt/lnxsrv1-data1 &nbsp;apakah sudah ada file dari server 10.12.13.100/data1

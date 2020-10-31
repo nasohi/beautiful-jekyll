@@ -1,0 +1,13 @@
+---
+layout: post
+title: Konfigurasi Server Load balancer dengan DNS Bind9
+date: '2019-04-03T21:52:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Bind9
+modified_time: '2019-04-04T11:57:01.825+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8976430618112479908
+blogger_orig_url: https://nciptandani.blogspot.com/2019/04/konfigurasi-server-load-balancer-dengan.html
+---
+
+Untuk melakukan konfigurasi load balancer untuk server misalnya webserver,fileserver,database server, dll bisa menggunakan proxy(haproxy,nginx,apache,dll) dan bisa juga menggunakan dns atau menerapkan kedua-duanya.&nbsp; Konfigurasinya cukup mudah hanya perlu menambahkan PTR seperti berikut di database zone:<br /><div><br /></div><div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">www.example.com.&nbsp; IN&nbsp; A&nbsp; 172.16.1.10</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">www.example.com.&nbsp; IN&nbsp; A&nbsp; 172.16.1.11</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">www.example.com.&nbsp; IN&nbsp; A&nbsp; 172.16.1.12</span></div></div>

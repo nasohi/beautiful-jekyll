@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'PostgreSQL ERROR: permission denied for relation users'
+date: '2020-01-24T00:44:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- PostgreSQL
+modified_time: '2020-01-24T00:45:35.817+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5113334144068634141
+blogger_orig_url: https://nciptandani.blogspot.com/2020/01/postgresql-error-permission-denied-for.html
+---
+
+Problem:&nbsp;ERROR: permission denied for relation users<br /><br />Solution:<br /><br />How to show schema_name:<br />Connect to your database<br />type:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">\dt</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;">and then execute grant command:</span><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">GRANT ALL PRIVILEGES ON DATABASE name_db TO remote_user;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA &lt;schema_name&gt; TO &lt;username&gt;;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA &lt;schema_name&gt; TO &lt;username&gt;;</span><br /><br /><br />

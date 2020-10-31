@@ -1,0 +1,15 @@
+---
+layout: post
+title: Adding a New Virtual Disk to a Virtual Machine GNU/Linux Debian
+date: '2018-07-21T12:41:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Debian
+- ITNSA
+modified_time: '2018-07-24T08:51:15.246+07:00'
+thumbnail: https://4.bp.blogspot.com/-sgwiBBA8kAU/W1LGV4FAJNI/AAAAAAAABOs/UPO9oroT0mIHAm3I0OtUWmm2iOsW1IWKQCLcBGAs/s72-c/add-disk-vmware.png
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-1140504352579433661
+blogger_orig_url: https://nciptandani.blogspot.com/2018/07/adding-new-virtual-disk-to-virtual.html
+---
+
+Berikut adalah screenshot penambahan virtual disk ke virtual machine GNU/Linux Debian<br /><br />1. Klik menu settings pada vm yang ingin ditambah disk nya<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-sgwiBBA8kAU/W1LGV4FAJNI/AAAAAAAABOs/UPO9oroT0mIHAm3I0OtUWmm2iOsW1IWKQCLcBGAs/s1600/add-disk-vmware.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="565" data-original-width="685" src="https://4.bp.blogspot.com/-sgwiBBA8kAU/W1LGV4FAJNI/AAAAAAAABOs/UPO9oroT0mIHAm3I0OtUWmm2iOsW1IWKQCLcBGAs/s1600/add-disk-vmware.png" /></a></div><br /><br />2.&nbsp; Cek disk di GNU/Linux Debian<br /><br />Berikut menggunakan perintah fdisk -l<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-03tF7EQzaPA/W1LG4GKz-BI/AAAAAAAABO0/umP1JJTk0vIJF5csPe1HwID94fWq4ikQACLcBGAs/s1600/2018-07-21%2B12_33_19-Window.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="583" data-original-width="616" src="https://3.bp.blogspot.com/-03tF7EQzaPA/W1LG4GKz-BI/AAAAAAAABO0/umP1JJTk0vIJF5csPe1HwID94fWq4ikQACLcBGAs/s1600/2018-07-21%2B12_33_19-Window.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Ini menggunakan perintah lsblk</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-wETPY_J9Ens/W1LG4PPnn7I/AAAAAAAABO4/iSCf_whQOpcklId6dYT0m_VXwSVPo9MpgCLcBGAs/s1600/2018-07-21%2B12_34_13-Window.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="214" data-original-width="475" src="https://3.bp.blogspot.com/-wETPY_J9Ens/W1LG4PPnn7I/AAAAAAAABO4/iSCf_whQOpcklId6dYT0m_VXwSVPo9MpgCLcBGAs/s1600/2018-07-21%2B12_34_13-Window.png" /></a></div><br /><br />Bisa terlihat dua disk yang baru ditambahkan dengan masing-masing size 5GB sudah terdeteksi di GNU/Linux Debian, untuk lokasi /dev/sd* lihat dan sesuaikan di system anda, selanjutnya bisa dilakukan konfigurasi partisi, LVM, RAID, Mounting, dll.<br /><br /><br /><br />

@@ -1,0 +1,13 @@
+---
+layout: post
+title: Basic How to Operate Docker
+date: '2019-09-03T14:21:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Docker
+modified_time: '2019-09-03T14:46:13.156+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6980239879096993757
+blogger_orig_url: https://nciptandani.blogspot.com/2019/09/basic-how-to-operate-docker.html
+---
+
+<div style="text-align: justify;">Seperti yang kita tahu bahwa <i>container</i> lebih ringan daripada <i>virtual machine</i> karena <i>container</i> menggunakan shared kernel dari host, namun untuk operasional sama seperti <i>virtual machine</i> yang bisa di <i>create, start, stop, run,</i> dll. Berikut adalah perintah-perintah dasar <i>container </i>menggunakan <i>docker</i>:</div><br /><i>Example:</i><br /><br /><b>Download centos image</b><br /><i>Image</i> ini yang akan digunakan sebagai <i>blueprint</i> dari<i> container</i><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker pull centos</span><br /><br /><b>Melihat image yang sudah di download</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker images</span><br /><br /><b>Membuat/menjalankan container</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker run -t -d --hostname=centos7-srv1 --name centos7-srv1 centos</span><br /><br /><b>Masuk ke terminal container</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker exec -it centos7-srv1 bash</span><br /><br /><b>Melihat proses container</b><br /><b><br /></b><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker ps -a</span><br /><br /><b>Start docker</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">docker start container_name</span><br /><br /><b>Stop container</b><br /><b><br /></b><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker stop container_name</span><br /><br /><b>Delete container</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">docker rm container_name</span><br /><br /><b>Help</b><br /><b><br /></b><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">man docker</span>

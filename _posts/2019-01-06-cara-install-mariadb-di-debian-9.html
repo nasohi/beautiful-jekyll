@@ -1,0 +1,13 @@
+---
+layout: post
+title: Cara install MariaDB di Debian 9
+date: '2019-01-06T09:28:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- MySQL
+modified_time: '2019-01-08T11:40:13.031+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5959559047607463415
+blogger_orig_url: https://nciptandani.blogspot.com/2019/01/cara-install-mariadb-di-debian-9.html
+---
+
+Untuk install software database MariaDB cukup mudah, berikut langkah-langkahnya:<br /><br /><b>Update debian</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#apt-get update</span><br /><br /><b>Install paket software MariaDB</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#apt-get install mariadb-server</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;"><b>Enable mysql_native_password plugin</b></span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: courier new, courier, monospace;">#mysql -u root</span><br /><span style="font-family: courier new, courier, monospace;"><br /></span><span style="font-family: courier new, courier, monospace;">USE mysql;</span><br /><span style="font-family: courier new, courier, monospace;">UPDATE user SET plugin='mysql_native_password' WHERE User='root';</span><br /><span style="font-family: courier new, courier, monospace;">FLUSH PRIVILEGES;</span><br /><span style="font-family: courier new, courier, monospace;">exit</span><br /><span style="font-family: courier new, courier, monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br /><span style="font-family: courier new, courier, monospace;">systemctl restart mysql.service</span><br /><br /><b>Initial setting MariaDB</b><br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#mysql_secure_installation</span><br /><br />Ikuti hal-hal yang perlu disetting<br /><br />Setelah selesai MariaDB siap digunakan.<br /><br /><br />

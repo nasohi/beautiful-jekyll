@@ -1,0 +1,14 @@
+---
+layout: post
+title: How to configure PAM to allow/deny users login
+date: '2019-12-30T00:38:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Linux
+- ITNSA
+modified_time: '2019-12-30T00:39:11.833+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2546503132226792980
+blogger_orig_url: https://nciptandani.blogspot.com/2019/12/how-to-configure-pam-to-allowdeny-users.html
+---
+
+Pada contoh ini adalah cara untuk filter user login ke sistem, misalnya hanya ingin user-user tertentu yang bisa masuk ke sistem GUI/Console Linux ini bisa dilakukan melalui file<br /><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">nano /etc/pam.d/common-auth</span><br /><div><br /></div><div>Sebelum melakukan ini alangkah baiknya untuk dilakukan di server percobaan dan lakukan snapshoot karena jika terdapat salah konfigurasi bisa mengakibatkan gagal login ke sistem,</div><div>tambahkan script dibawah ini dibagian paling bawah</div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">auth required pam_listfile.so item=user sense=allow file=/etc/pam.d/users.allow onerr=fail</span></div><div><br /></div><div>simpan setelah menambahkan script diatas.</div><div><br /></div><div>dan jangan lupa buat file <b>users.allow </b>di <b>/etc/pam.d/</b></div><div><br /></div><div>isikan user-user yang hanya boleh login ke sistem per baris, contoh:</div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">root</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">user1</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">user2</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">user3</span></div><div><br /></div><div>Kemudian buat misalnya <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">adduser testuser1</span></div><div>Kemudian test logout sistem dan login dengan testuser1 maka tidak bisa karena belum terdaftar di <b>/etc/pam.d/users.allow</b>,&nbsp; login dengan root/user1/user2/user3 maka bisa login ke sistem.</div><div><br /></div><div>Ini juga bisa diterapkan pada ssh</div><div>referensi lain:&nbsp;<a href="https://www.cyberciti.biz/tips/linux-pam-configuration-that-allows-or-deny-login-via-the-sshd-server.html">https://www.cyberciti.biz/tips/linux-pam-configuration-that-allows-or-deny-login-via-the-sshd-server.html</a></div><div><br /></div><div><br /></div></div>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: How to Allow IP Addresses with a .htaccess File
+date: '2018-10-31T11:47:00.000+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-10-31T11:47:04.866+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-9137723829545002498
+blogger_orig_url: https://nciptandani.blogspot.com/2018/10/how-to-allow-ip-addresses-with-htaccess.html
+---
+
+Contoh script dibawah untuk membolehkan akses ke sebuah website dengan IP tertentu.<br /><b><br /></b><b>#nano /etc/apache2/sites-available/default</b><br /><br /><span style="font-family: &quot;Courier New&quot;, Courier, monospace;">&nbsp;&lt;Directory /var/www/tkj&gt;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Options Indexes FollowSymLinks MultiViews</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AllowOverride All</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Order allow,deny</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; allow from all</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp;&lt;/Directory&gt;</span><br /><br /><b>#service apache2 restart</b><br /><b>#nano /var/www/tkj/.htaccess</b><br /><b><br /></b><span style="font-family: Courier New, Courier, monospace;">&nbsp;order deny,allow</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp;d</span><span style="font-family: &quot;Courier New&quot;, Courier, monospace;">eny from all</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp;allow from 1.2.3.1</span><b><br /></b><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp;allow from 1.2.3.2</span><br /><br /><span style="font-family: inherit;">Untuk mulai apache versi 2.4 menjadi seperti berikut</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: Courier New, Courier, monospace;">&nbsp;Require ip 1.2.3.1</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp;Require ip 1.2.3.2</span><br /><br />Selengkapnya bisa ke<br /><span style="font-family: Courier New, Courier, monospace;"><a href="http://httpd.apache.org/docs/2.4/howto/access.html">http://httpd.apache.org/docs/2.4/howto/access.html</a></span>

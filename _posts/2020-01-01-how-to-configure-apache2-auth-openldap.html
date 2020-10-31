@@ -1,0 +1,15 @@
+---
+layout: post
+title: How to configure apache2 auth openldap debian 10
+date: '2020-01-01T23:21:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- Apache2
+- LDAP
+modified_time: '2020-01-01T23:21:15.731+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-7313135750762777196
+blogger_orig_url: https://nciptandani.blogspot.com/2020/01/how-to-configure-apache2-auth-openldap.html
+---
+
+Berikut adalah kofigurasi cukup singkat untuk melakukan autentikasi ke openldap pada website di apache2.<br /><br />Yang pertama pastikan apache2 sudah terinstall dengan baik dan tentukan site mana yang akan dipasang autentikasi.<br />Kemudian pastikan juga server ldap sudah siap, untuk cara install, pembuatan user dan cek login openldap bisa dilihat di video dibawah ini:<br /><a href="https://www.youtube.com/playlist?list=PL-p0E1DAGrw3cYSqmGUArs1qQSRPdbUmJ">https://www.youtube.com/playlist?list=PL-p0E1DAGrw3cYSqmGUArs1qQSRPdbUmJ</a><br /><br />Enable modul apache2 untuk autentikasi ldap dengan perintah dibawah ini<br /><br /><span style="font-family: Courier New, Courier, monospace;">root@www:~# a2enmod ldap authnz_ldap</span><br /><br /><br />Buat file baru dengan nama auth-ldap.conf dengan script dibawah ini:<br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">root@www:~# vi /etc/apache2/sites-available/auth-ldap.conf</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">&lt;Directory <b>/var/www/html/</b>&gt;</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; AuthName "LDAP Authentication"</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; AuthType Basic</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; AuthBasicProvider ldap</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; AuthLDAPURL ldap://<b>10.20.30.1/dc=abcd,dc=local</b>?uid?sub?(objectClass=*)</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; Require valid-user</span><br /><span style="font-family: Courier New, Courier, monospace;">&lt;/Directory&gt;</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">root@www:~# a2ensite auth-ldap</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">root@www:~# systemctl restart apache2</span><br /><br />Saat akses website seharusnya sudah muncul autentikasi, masukkan username dan password yang ada di LDAP.<br />Good Luck<br /><br /><br /><br />

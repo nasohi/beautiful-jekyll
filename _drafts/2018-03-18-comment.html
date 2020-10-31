@@ -1,0 +1,13 @@
+---
+layout: post
+title: Konfigurasi SFTP + Chroot
+date: '2018-03-18T21:57:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- SFTP
+modified_time: '2018-03-18T21:57:17.141+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2342244810510376723
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=2342244810510376723
+---
+
+<br />Some users who are applied this settings can access only with SFTP and access to the permitted directories.<br /><br />[1]<span style="white-space: pre;"> </span>For example, Set /home as the Chroot directory.<br /># create a group for SFTP<br />root@dlp:~# groupadd sftp_users<br /># apply to a user [debian] for SFTP only as an example<br />root@dlp:~# usermod -G sftp_users debian<br />root@dlp:~# vi /etc/ssh/sshd_config<br /># line 116: comment out and add a line like below<br />#Subsystem sftp /usr/lib/openssh/sftp-server<br />Subsystem sftp internal-sftp<br /># add to the end<br />Match Group sftp_users<br />&nbsp; X11Forwarding no<br />&nbsp; AllowTcpForwarding no<br />&nbsp; ChrootDirectory /home<br />&nbsp; ForceCommand internal-sftp<br />root@dlp:~# systemctl restart ssh<br />[2]<span style="white-space: pre;"> </span>Try to access with a user and make sure the settings.<br />debian@www:~$ ssh debian@10.0.0.30<br />debian@10.0.0.30's password:<br />This service allows sftp connections only.<br />Connection to 10.0.0.30 closed.&nbsp; &nbsp; &nbsp;# denied normally<br />debian@www:~$ sftp debian@10.0.0.30<br />Connecting to 10.0.0.30...<br />debian@10.0.0.30's password:<br />sftp&gt; ls -l<br />drwxr-xr-x&nbsp; &nbsp; 3 1001&nbsp; &nbsp; &nbsp;1001&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4096 Apr 23 03:11 debian<br />drwxr-xr-x&nbsp; &nbsp; 4 1000&nbsp; &nbsp; &nbsp;1000&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4096 Apr 24 12:24 strech<br />sftp&gt; pwd<br />Remote working directory: /<br />sftp&gt; exit

@@ -1,0 +1,14 @@
+---
+layout: post
+title: Haproxy https backend
+date: '2018-12-28T22:11:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Haproxy
+- ITNSA
+modified_time: '2018-12-28T22:27:19.903+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2341399760944198206
+blogger_orig_url: https://nciptandani.blogspot.com/2018/12/haproxy-https-backend.html
+---
+
+Berikut adalah contoh script haproxy https bagian backend<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">backend tkj-id-backend</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp;balance roundrobin</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp;server tkj-id-srv01 10.20.30.40:443 check ssl verify none</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp;server </span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">tkj-id-srv02 10.20.30.41:443 check ssl verify none</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: inherit;">Tentu script diatas hanya sebagai clue yang terdiri dari syntax/directive masih membutuhkan directive frontend agar bisa menjadi layanan yang ingin dibuat.</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Dalam programmer,sysops,devops,netdevops,sysadmin,dll banyak terdiri dari syntax,command,directive untuk mencapai project yang diminta/diinginkan.</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Seiring berjalannya perkembangan software maka perlu dicek juga script terbaru dari website resminya.</span><br /><span style="font-family: inherit;"><br /></span><span style="font-family: inherit;">Dalam mencari script inilah para pekerja IT perlu belajar dari berbagai website mulai dari blog sampai website dokumentasi resmi dari bahasa pemrograman,pembuat software. Butuh waktu, kesungguhan, kesabaran untuk mengumpulkan script. Dalam perusahaan besar yang sudah menyusun script sedemikian rupa sehingga menjadi software yang bermanfaat bagi banyak orang.&nbsp;</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><br /><br />

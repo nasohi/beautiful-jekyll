@@ -1,0 +1,13 @@
+---
+layout: post
+title: Simple install Laravel di Debain
+date: '2019-01-11T23:50:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+modified_time: '2019-01-11T23:50:48.649+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5686024594776899145
+blogger_orig_url: https://nciptandani.blogspot.com/2019/01/simple-install-laravel-di-debain.html
+---
+
+Percobaan saya menggunakan Debian 9<br />Berikut rangkuman step by step nya, buat sekedar catatan, untuk lebih lengkapnya bisa di <i>crosscheck </i>dengan website/blog tutorial lain<br /><br /><span style="font-family: Courier New, Courier, monospace;">sudo apt-get update&nbsp;</span><br /><span style="font-family: Courier New, Courier, monospace;">sudo apt-get upgrade</span><br /><span style="font-family: Courier New, Courier, monospace;">sudo apt-get install curl</span><br /><br />Install PHP dan kebutuhan PHP modules untuk Laravel<br /><br /><span style="font-family: Courier New, Courier, monospace;">sudo apt-get install php-cli php-gd php-mbstring php-mcrypt php-zip php-opcache php-xml</span><br /><br />Install Composer<br />Composer adalah dependency manager untuk PHP<br /><br /><span style="font-family: Courier New, Courier, monospace;">sudo curl -sS https://getcomposer.org/installer | php</span><br /><span style="font-family: Courier New, Courier, monospace;">mv composer.phar /usr/local/bin/composer</span><br /><br />Install Laravel<br /><br /><span style="font-family: Courier New, Courier, monospace;">sudo composer create-project --prefer-dist laravel/laravel my_app</span><br /><span style="font-family: Courier New, Courier, monospace;">cd my_app</span><br /><span style="font-family: Courier New, Courier, monospace;">php artisan serve</span><br /><br />Laravel development server started: &lt;http://127.0.0.1:8000&gt;<br /><br />Untuk listen di IP lain bisa menggunakan perintah berikut:<br /><br /><span style="font-family: Courier New, Courier, monospace;">php artisan serve --host=192.168.100.100</span><br /><br />Kalau sudah muncul seperti diatas Laravel sudah bisa digunakan dengan konfigurasi diatas,&nbsp; agar laravel bisa diakses melalui Domain,IP,HTTP/HTTPS maka perlu menginstall Apache/Nginx.

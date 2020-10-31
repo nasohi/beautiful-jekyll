@@ -1,0 +1,14 @@
+---
+layout: post
+title: How to install PHP 7 on Centos 7
+date: '2018-09-05T10:31:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- CentOS
+- PHP
+modified_time: '2018-09-05T10:31:39.725+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-3408436028691006521
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/how-to-install-php-7-on-centos-7.html
+---
+
+Berikut adalah ringkasan langkah-langkah installasi PHP di Centos 7<br /><br /><span style="font-family: Courier New, Courier, monospace;">#yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#yum install yum-utils</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#yum-config-manager --enable remi-php70&nbsp;&nbsp;</span><br />atau<br /><span style="font-family: Courier New, Courier, monospace;">#yum-config-manager --enable remi-php71&nbsp; </span><br />atau<br /><span style="font-family: Courier New, Courier, monospace;">#yum-config-manager --enable remi-php72</span><br /><br />Install PHP dan beberapa modul<br /><span style="font-family: Courier New, Courier, monospace;">#yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo</span><br /><br />Cek<br /><span style="font-family: Courier New, Courier, monospace;">#php -v</span>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: how to run script at boot using systemd
+date: '2019-08-30T23:42:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Bash
+modified_time: '2019-08-30T23:52:19.274+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-254858632610971088
+blogger_orig_url: https://nciptandani.blogspot.com/2019/08/how-to-run-script-at-boot-using-systemd.html
+---
+
+Example I have script to run at boot<br /><br />Create your own script, my example is start-myscript.sh<br /><br />Make that the script executable with:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">chmod u+x /usr/local/bin/start-myscript.sh</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span>And then create a file named end with .service, this file will be used to call the start-myscript.sh, example: myscript.service file should look like this:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">[Unit]</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Description=My Script</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span> <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">[Service]</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">ExecStart=/usr/local/bin/start-myscript.sh</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">[Install]</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">WantedBy=multi-user.target</span><br /><br />Now do a few more steps to enable and use the .service file:<br /><br />Place it in /lib/systemd/system folder with say a name of myscript.service<br /><br />Start it:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo systemctl start myscript</span><br /><br />Enable it to run at boot:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo systemctl enable myscript</span><br /><br />Stop it:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">sudo systemctl stop myscript</span>

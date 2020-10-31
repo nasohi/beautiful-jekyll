@@ -1,0 +1,13 @@
+---
+layout: post
+title: How to Enable and Disable Hyper-V in Windows 10 & 8
+date: '2018-07-15T20:33:00.000+07:00'
+author: Nasohi Ciptandani
+tags:
+- Hyper-V
+modified_time: '2018-07-16T01:43:13.637+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6786201868249195055
+blogger_orig_url: https://nciptandani.blogspot.com/2018/07/how-to-enable-and-disable-hyper-v-in.html
+---
+
+<div>OPSI 1 - UNTUK MENGAKTIFKAN DAN MENONAKTIFKAN HYPER-V DI WINDOWS</div><div><br /></div><div>1. Buka Control Panel\Programs\Programs and Features\<b>Turn Windows features on or off</b></div><div><br /></div><div>2. Check untuk mengaktifkan Hyper-V atau Uncheck untuk menonaktifkan Hyper-V</div><div><br /></div><div>3. Reboot</div><div><br /></div><div>OPSI 2 -&nbsp; POWERSHELL</div><div><br /></div><div>1. Buka PowerShell</div><div><br /></div><div>2. Untuk Mengaktifkan Hyper-V</div><div><br /></div><div><span style="background-color: black; color: white; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V –All</span></div><div><br /></div><div>3. Untuk Menonaktifkan Hyper-V</div><div><br /></div><div><span style="background-color: black;"><span style="color: white; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All</span></span></div><div><br /></div><div>4. Ketik Y dan tekan Enter ketika diminta untuk me-restart komputer.</div><div><br /></div><div>OPSI 3 - MENGGUNAKAN DISM COMMAND</div><div><br /></div><div>1. Buka CMD</div><div><br /></div><div>2. Untuk Mengaktifkan Hyper-V</div><div><br /></div><div><span style="background-color: black; color: white; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">dism.exe /Online /Enable-Feature:Microsoft-Hyper-V /All</span></div><div><br /></div><div>3. Untuk Menonaktifkan Hyper-V</div><div><br /></div><div><span style="background-color: black;"><span style="color: white; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">dism.exe /Online /Disable-Feature:Microsoft-Hyper-V-All</span></span></div><div><br /></div><div>4. Ketik Y dan tekan Enter ketika diminta untuk me-restart komputer.</div>

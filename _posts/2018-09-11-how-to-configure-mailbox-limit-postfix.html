@@ -1,0 +1,16 @@
+---
+layout: post
+title: How to configure mailbox limit Postfix
+date: '2018-09-11T21:46:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- ITNSA
+- Postfix
+- Mail
+modified_time: '2018-09-11T21:46:11.905+07:00'
+thumbnail: https://i.ytimg.com/vi/_NLXl0ocoOQ/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-7785787580043517912
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/how-to-configure-mailbox-limit-postfix.html
+---
+
+<b>Work task:</b><br /><div><br /></div><div><div>Limit mailbox for each user to 1MB</div></div><div><br /></div><div><b><br /></b></div><div><b>How to configure:</b></div><div><br /></div><div>Limit size in bytes</div><div>Find &amp; edit /etc/postfix/main.cf as follow:</div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;mailbox_size_limit = 1024000</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">&nbsp; &nbsp;message_size_limit = 1024000</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">~#etc/init.d/postfix restart</span></div><div><br /></div><div><br /></div><div><b>How to mark:</b></div><div><br /></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#postconf&nbsp;mailbox_size_limit</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#postconf&nbsp;massage_size_limit</span></div><div><span style="font-family: inherit;">Output:</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">mailbox_size_limit = 1024000</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">message_size_limit = 1024000</span></div><div><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><br /></span></div><div><span style="font-family: inherit;"><b>Additional</b></span></div><div><b><span style="font-family: inherit;">Proof:</span></b></div><div><b><span style="font-family: inherit;"><br /></span></b></div><div>Screencast berikut test postfix message mailbox size using mail client CLI mutt</div><div><br /></div><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/_NLXl0ocoOQ" width="560"></iframe>

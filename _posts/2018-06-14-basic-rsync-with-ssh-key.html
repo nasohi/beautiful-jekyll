@@ -1,0 +1,15 @@
+---
+layout: post
+title: Basic Rsync with SSH Key
+date: '2018-06-14T15:00:00.002+07:00'
+author: Nasohi Ciptandani
+tags:
+- Rsync
+- SSH
+modified_time: '2018-07-06T09:57:13.512+07:00'
+thumbnail: https://i.ytimg.com/vi/G2yORNvY_LA/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-7998649353874949118
+blogger_orig_url: https://nciptandani.blogspot.com/2018/06/basic-rsync-with-ssh-key.html
+---
+
+Pada tutorial ini akan membuat folder/file synchronization menggunakan Rsync dengan option -av dan ---delete.<br /><br />Option -a artinya archieve mode, di mode ini akan mencopy file/folder dari source server ke destination server dengan menjaga permission nya dan di option ini juga mencopy secara recursive (copy sub folder dan file file nya jika ada).<br /><br />Option -v artinya verbose, opsi ini akan menampilkan informasi ke layar seperti tentang file-file apa saja yang telah tercopy<br /><br />Option --delete akan menghapus file/folder yang tidak sesuai dengan source server,&nbsp; dengan ini daftar isi file di kedua server akan sama. Jika kedua server sama-sama menjalankan rsync maka akan mengubah file yang ada di destination, jika ada file baru di destination ada rsync jalan di source server maka file yang di destination akan terhapus.<br /><br />SSH-Key agar proses rsync bisa passwordless.<br /><br />Selanjutnya bisa jalankan Rsync secara rutin pada periode waktu yang diinginkan menggunakan crontab, edit menggunakan perintah crontab -e<br /><br />Untuk video demo bisa dilihat dibawah ini:<br /><br /><br /><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/G2yORNvY_LA" width="640"></iframe><br /><br />Archive mode is the same as options -rlptgoD<br />r = recurse into directories<br />l = copy symlinks as symlinks<br />p = preserve permissions<br />t = preserve modification times<br />g = preserve group<br />o = preserve owner (super-user only)<br />D = preserve device &amp; special files

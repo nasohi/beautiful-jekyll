@@ -1,0 +1,12 @@
+---
+layout: post
+title: Upload image di Laravel
+date: '2018-01-06T18:01:00.001+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-01-06T18:01:11.553+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-718569001853311084
+blogger_orig_url: https://www.blogger.com/comment.g?blogID=7821506235811301823&postID=718569001853311084
+---
+
+One of my friend is asking for uploading a image in laravel using auth and I did it.<br /><br />First of all you have to edit your AuthController.php file.<br /><br /><br />protected function validator(array $data) {<br />return Validator::make($data, [<br />'name' =&gt; 'required|max:255',<br />'email' =&gt; 'required|email|max:255|unique:users',<br />'image' =&gt; 'required|image|mimes:jpg,jpeg',<br />'password' =&gt; 'required|min:6|confirmed',<br />]);<br />}<br /><br />/**<br />* Create a new user instance after a valid registration.<br />*<br />* @param array $data<br />* @return User<br />*/<br />protected function create(array $data) {<br /><br />$imageName = time() . '.' . $data['image']-&gt;getClientOriginalExtension();<br /><br />$data['image']-&gt;move(<br />base_path() . '/public/upload/', $imageName<br />);<br /><br />return User::create([<br />'name' =&gt; $data['name'],<br />'email' =&gt; $data['email'],<br />'image' =&gt; $imageName,<br />'password' =&gt; bcrypt($data['password']),<br />]);<br />}<br />}<br /><br />Then you have to edit your register.blade.php view.<br /><br />First you need to add in your form tag.<br /><br />enctype="multipart/form-data"<br /><br />then copy above div and change type of that input.<br /><br />Now it’s time to edit only User.php file.<br /><br /><br />protected $fillable = [<br />'name', 'email', 'password','image',<br />];<br /><br />That’s it. Enjoy and debug the code.<br /><br />Here I share you guy’s one important link for upload an image after registration.<br />IMP Links: https://devdojo.com/episode/laravel-user-image

@@ -1,0 +1,12 @@
+---
+layout: post
+title: Configure RSYSLOG Database
+date: '2018-10-17T17:50:00.000+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2018-10-17T17:50:05.413+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-5591441733219561338
+blogger_orig_url: https://nciptandani.blogspot.com/2018/10/configure-rsyslog-database.html
+---
+
+Import the default database scheme offered by RSYSLOG using the below command:<br /><br /><span style="font-family: Courier New, Courier, monospace;">[root@loganalyzer ~]# mysql -u root -p &lt; /usr/share/doc/rsyslog-7.4.7/mysql-createDB.sql</span><br /><br />Create a user to access the Syslog database:<br /><br /><span style="font-family: Courier New, Courier, monospace;">mysql -u root -p</span><br /><span style="font-family: Courier New, Courier, monospace;">MariaDB [(none)]&gt; GRANT ALL ON Syslog.* TO 'rsyslog'@'localhost' IDENTIFIED BY 'Password';</span><br /><span style="font-family: Courier New, Courier, monospace;">MariaDB [(none)]&gt; FLUSH PRIVILEGES;</span><br /><span style="font-family: Courier New, Courier, monospace;">MariaDB [(none)]&gt; exit</span>

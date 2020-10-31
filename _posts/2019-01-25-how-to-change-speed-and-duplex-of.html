@@ -1,0 +1,12 @@
+---
+layout: post
+title: How to Change Speed and Duplex of Ethernet card in Linux
+date: '2019-01-25T17:17:00.000+07:00'
+author: Nasohi Ciptandani
+tags: 
+modified_time: '2019-01-25T17:17:02.487+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-2359835820193600693
+blogger_orig_url: https://nciptandani.blogspot.com/2019/01/how-to-change-speed-and-duplex-of.html
+---
+
+Use ethtool<br /><br /><b>Install</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#apt-get install ethtool</span><br /><br /><b>Example:</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#ethtool eth0</span><br /><span style="font-family: Courier New, Courier, monospace;">#ethtool bond0</span><br /><br /><b>Change the Speed and Duplex settings</b><br /><br /><span style="font-family: Courier New, Courier, monospace;">#ethtool -s eth0 autoneg on</span><br /><span style="font-family: Courier New, Courier, monospace;">#ethtool -s eth0 speed 10 duplex half autoneg off</span><br /><span style="font-family: Courier New, Courier, monospace;">#ethtool -s eth0 speed 100 duplex full autoneg off</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: inherit;"><b>Manual</b></span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">#man ethtool</span>

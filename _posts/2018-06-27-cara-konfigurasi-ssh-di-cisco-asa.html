@@ -1,0 +1,15 @@
+---
+layout: post
+title: Cara konfigurasi SSH di Cisco ASA
+date: '2018-06-27T20:46:00.004+07:00'
+author: Nasohi Ciptandani
+tags:
+- Packet Tracer
+- ASA
+- Cisco
+modified_time: '2018-06-27T20:48:26.996+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-6738663540488734424
+blogger_orig_url: https://nciptandani.blogspot.com/2018/06/cara-konfigurasi-ssh-di-cisco-asa.html
+---
+
+Berikut adalah langkah-langkah mengkonfigurasi SSH untuk remote management di Cisco ASA:<br /><br />Langkah 1: Mengkonfigurasi Enable password. (optional)<br /><br />ASA (config) # enable password enpass@123<br /><br />Langkah 2: Buat username dengan password.<br /><br />ASA (config) # username user1 password user1pass@123<br /><br />Langkah 3: Konfigurasikan nama pengguna lokal ini untuk melakukan otentikasi dengan SSH.<br /><br />ASA (config) # aaa authentication ssh console LOCAL<br /><br />Langkah 4: Buat pasangan kunci RSA.<br /><br />ASA (config) # crypto key generate rsa modulus 1024<br /><br />Langkah 5: Sekarang tentukan hanya host atau jaringan tertentu untuk terhubung ke perangkat menggunakan SSH.<br /><br />ASA (config) # ssh 192.168.1.0 255.255.255.0 inside<br /><br />Sekarang kita dapat mengakses perangkat menggunakan SSH dari 192.168.1.0 melalui jaringan inside (LAN).

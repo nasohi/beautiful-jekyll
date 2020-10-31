@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cara simple konfigurasi OpenVPN
+date: '2019-05-21T06:43:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- OpenVPN
+- ITNSA
+modified_time: '2019-07-01T23:14:01.443+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-244031252625295710
+blogger_orig_url: https://nciptandani.blogspot.com/2019/05/cara-simple-konfigurasi-openvpn.html
+---
+
+Berikut adalah cara simple konfigurasi OpenVPN<br /><br />Cara ini tidak pakai autentikasi dan enkripsi jadi tidak aman, namun untuk belajar/testing bagus untuk dicoba karena nanti banyak pilihan untuk autentikasi seperti via pam, via radius, via ldap, via tls, begitu juga untuk enkripsi.<br /><br />Konfigurasi di Server1<br />Server1<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"># openvpn --dev tun2 --port 1195 --ifconfig 1.1.1.1 1.1.1.2</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br />Konfigurasi di Server2<br />Server2<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"># openvpn --remote 100.100.100.2 --dev tun2&nbsp; <span style="background-color: transparent; color: black; display: inline; float: none; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">--port 1195 </span>--ifconfig 1.1.1.2 1.1.1.1</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"></span><br />100.100.100.2 ip interface server1<br /><br />Perintah diatas berjalan di console dan akan membuat sebuah interface tunnel, server1 akan menggunakan ip 1.1.1.1 dan server2 akan menggunakan ip 1.1.1.2. Bisa saling ping.<br />Konfigurasi diatas bersifat sementara, untuk membuat permanen bisa di simpan di file .conf openvpn, bash script, dll.<br /><br />Referensi<br /><a href="https://wiki.debian.org/OpenVPN">https://wiki.debian.org/OpenVPN</a>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Work Task Remote Desktop Services
+date: '2018-09-08T14:58:00.001+07:00'
+author: Nasohi Ciptandani
+tags:
+- RDS
+- Windows
+modified_time: '2018-09-08T17:39:22.105+07:00'
+thumbnail: https://i.ytimg.com/vi/fZGlrNZq684/default.jpg
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-790588074041850074
+blogger_orig_url: https://nciptandani.blogspot.com/2018/09/work-task-remote-desktop-services.html
+---
+
+Work Task:<br /><br />▪ Install Remote Desktop Services<br />- Do not install RD Licensing component<br />▪ Configure web-access for terminal services<br />▪ The RDS login page should be accessible by entering the url https://rds.jakarta.net<br />▪ Make sure only users RDS_user1 and RDS_user2 are able to login via RDP<br />▪ Publish Wordpad on the web-portal of RemoteApp for the domain user “RDS_user1”<br />▪ Publish Calculator on the web-portal of RemoteApp for the domain users “RDS_user2”<br /><br /><br />Marking:<br /><br /><br />1. RDS - connection<span style="white-space: pre;"> </span>open browser, try to access https://rds.jakarta.net,<br /><br />Yang perlu diperhatikan:<br />&nbsp; &nbsp; 1. Karena by default masih&nbsp;&nbsp;https://rds.jakarta.net/RDweb,&nbsp; untuk akses menggunakan URL https://rds.jakarta.net perlu konfigurasi di IIS, lihat screencast dibawah.<br /><br />&nbsp; &nbsp; 2. Karena di Work Task belum ada instruksi no certificate warning maka tidak apa-apa, jika di work task terdapat no certificate warning maka perlu certificate yang di signed oleh server CA dan trusted di semua PC anggota domain.<br /><br />2. RDS - authentication<span style="white-space: pre;"> </span>try to login with RDS_user1 or RDS_user2 and login successfully<br /><br />3. RDS - Remote App&nbsp; &nbsp; &nbsp;try to login with RDS_user1 or RDS_user2 and appear the appropriate app.<br /><br /><br />Screencast:<br /><br /><br /><br /><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/fZGlrNZq684" width="560"></iframe> <br /><br /><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5NDkAJBZTbw" width="560"></iframe> <br /><br /><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/nwWzWaSOoeY" width="560"></iframe>

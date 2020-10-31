@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cara menggunakan bootstrap di laravel
+date: '2017-12-21T00:49:00.003+07:00'
+author: Nasohi Ciptandani
+tags:
+- Laravel
+- Bootstrap
+modified_time: '2017-12-21T00:49:38.788+07:00'
+blogger_id: tag:blogger.com,1999:blog-7821506235811301823.post-8363352711338251393
+blogger_orig_url: https://nciptandani.blogspot.com/2017/12/cara-menggunakan-bootstrap-di-laravel.html
+---
+
+Secara default bootstrap sudah&nbsp;bisa&nbsp;di gunakan namun file bootstrap masih mengambil dari internet (cdn), berikut adalah cara agar file boostrap offline, pertama download dulu file bootstap nya.<br />Kemudian buka file app.blade.php yang terletak di /resources/views/layout, hapus jalur CDN Anda<br /><br />Ekstrak paket bootstrap dan kemudian<br /><br />salin bootstrap.min.css ke folder publik / css Anda<br />salin bootstrap.min.js ke folder publik / js Anda<br />Tambahkan yang berikut ke area kepala app.blade.php<br /><br /><blockquote class="tr_bq">&lt;link href = "{{ "{{" }}asset ('css / bootstrap.min.css')}}" rel = "stylesheet"&gt;</blockquote><br />Sebelum penutup &lt;/ body&gt; di app.blade.php<br /><br /><blockquote class="tr_bq">&nbsp; &nbsp; &nbsp;&lt;! - jQuery (diperlukan untuk plugin JavaScript Bootstrap) -&gt;<br />&nbsp; &nbsp; &nbsp;&lt;script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt; &lt;/ script&gt;<br />&nbsp; &nbsp; &nbsp;&lt;! - Sertakan semua plugin yang dikompilasi (di bawah), atau sertakan file individual sesuai kebutuhan -&gt;<br />&nbsp; &nbsp; &nbsp;&lt;script src = "{{ "{{" }}asset ('js / bootstrap.min.js')}}"&gt; &lt;/ script&gt;</blockquote><br />Anda mungkin perlu melakukan hal yang sama dengan jQuery jika Anda memerlukannya tanpa berasal dari CDN<br /><br />Semoga bermanfaat kawan
